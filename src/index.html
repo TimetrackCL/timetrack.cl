@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    @@include("partials/title-meta.html", {"title": "Startup Landing Page"})
+
+    @@include('./partials/head-css.html')
+    @@include('./partials/tagmanager-head.html')
+</head>
+
+<body class="text-gray-700">
+    @@include('./partials/tagmanager-body.html')
+    @@include('./partials/navbar.html')
+
+    <!-- =========== Hero Section Start =========== -->
+    <section class="relative pt-44 pb-36 bg-gradient-to-t from-slate-500/10 overflow-x-hidden" id="home">
+        <div class="container">
+            <div class="grid lg:grid-cols-2 grid-cols-1 gap-16 items-center">
+                <div>
+                    <h1 class="md:text-5xl/tight text-3xl font-semibold text-gray-700 mb-7">
+                        Tú organiza, nosotros te garantizamos el cronometraje
+                        <br> para
+                        <span class="typewrite capitalize relative after:absolute after:inset-x-0 after:bottom-2 after:bg-green-400/40 after:h-5 after:w-full after:-z-10" data-period="2000" data-type='[ "Running", "Trail Running", "Triatlon", "Ciclismo"]'>
+                            <span class="wrap"></span>
+                        </span>
+                    </h1>
+
+                    <p class="text-slate-500 leading-7">Enfócate en producir eventos memorables, mientras nosotros aseguramos un cronometraje preciso y profesional con la avanzada tecnología <strong>BibTag de MyLaps</strong>.</p>
+                    <div class="flex flex-wrap items-center gap-5 mt-16">
+                        
+                        <button class="flex items-center">
+                            <a href="#contact" class="border border-primary text-primary rounded-md hover:bg-primary hover:text-white hover:shadow-lg hover:shadow-primary/30 focus:shadow-none focus:outline focus:outline-primary/40 transition-all duration-500 py-2 px-4">Cotiza Ahora</a>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2">
+                    <div class="relative">
+
+                        <div class="hidden sm:block">
+                            <div class="before:w-24 before:h-24 before:absolute before:-bottom-8 before:-start-8 before:bg-[url('../images/pattern/dot2.svg')]"></div>
+                            <div class="after:w-24 after:h-24 after:absolute after:-top-10 after:end-10 2xl:after:end-0 after:rotate-45 after:bg-[url('../images/pattern/dot5.svg')]"></div>
+                        </div>
+
+                        <div id="swiper_one" class="swiper border-[6px] border-white bg-white 2xl:w-[140%] shadow" data-aos="fade-left" data-aos-duration="1000">
+                            <div class="swiper-wrapper">
+
+                                <div class="swiper-slide">
+                                    <img src="assets/images/slides/slide-9-trail.jpg" alt="Triatlon" class="w-full h-full rounded-md">
+                                </div>
+
+                                 <div class="swiper-slide">
+                                    <img src="assets/images/slides/slide-10-triatlon.jpg" alt="Triatlon" class="w-full h-full rounded-md">
+                                </div>
+                                
+                                
+                                <div class="swiper-slide">
+                                    <img src="assets/images/slides/slide-11-running.jpg" alt="Runninf" class="w-full h-full rounded-md">
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <img src="assets/images/slides/slide-12-cycling.jpg" alt="cycling" class="w-full h-full rounded-md">
+                                </div> 
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- =========== Hero Section End =========== -->
+
+    <!-- =========== clients - reviews Section Start =========== -->
+    <section class="xl:py-24 py-16">
+        <div class="container" data-aos="fade-up" data-aos-duration="1000">
+            <div class="text-center">
+                <div>
+                    <p class="text-base font-semibold">Cronometrando Éxitos: <br>Quienes han Confiado en Nosotros.</p>
+                    <div class="flex flex-wrap md:flex-nowrap justify-center gap-10 mt-7">
+                        <div>
+                            <img src="assets/images/brands/carrera-challenge-puerto-varas.jpg" class="w-32 grayscale">
+                        </div>
+                        <div>
+                            <img src="assets/images/brands/carrera-corrida-carabineros.jpg" class="w-32 grayscale">
+                        </div>
+                        <div>
+                            <img src="assets/images/brands/carrera-stgo-21k.jpg" class="w-32 grayscale">
+                        </div>
+                        <div>
+                            <img src="assets/images/brands/carrera-maraton-temuco.jpg" class="w-32 grayscale">
+                        </div>
+                        <div>
+                            <img src="assets/images/brands/carrera-futangue-challenge.jpg" class="w-32 grayscale">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- =========== clients - reviews Section End =========== -->
+
+    <!-- =========== technology Section Start =========== -->
+    <section class="xl:py-24 py-16 overflow-x-hidden" id="technology">
+        <div class="container">
+            <div>
+                <div class="grid lg:grid-cols-2 grid-cols-1 2xl:gap-24 gap-10 items-center">
+
+                    <div class="order-2 lg:order-1">
+                        <span class="text-sm bg-red-500/10 text-red-600 rounded-full px-3 py-1">Tecnología</span>
+                        <h1 class="text-3xl/tight font-medium mt-3 mb-4">BibTag System</h1>
+                        <p class="text-gray-500">El sistema de cronometraje BibTag es la solución de <strong>MYLAPS</strong> adecuada para eventos masivos con chips pasivos y con la mayor velocidad de lectura de la industria. </p>
+                        <ul class="text-gray-500 list-disc pl-4 pt-4">
+                            <li>Funciona para eventos de <strong>running</strong>, <strong>cycling</strong>, <strong>triathlon</strong> y <strong>cross-country</strong></li>
+                            <li>Las velocidades de lectura más altas de la industria (Detection rate: >99.80%)</li>
+                            <li>BibTag System cumple la norma de la <strong>IAAF</strong></li>
+                            <li>Sistema de lectura es pasivo a través de <strong>UHF</strong></li>
+                        </ul>
+
+                        <button class="mt-12 flex items-center">
+                            <a href="technology-mylaps-bibtag-system-components.html" class="border border-primary text-primary rounded-md hover:bg-primary hover:text-white hover:shadow-lg hover:shadow-primary/30 focus:shadow-none focus:outline focus:outline-primary/40 transition-all duration-500 py-2 px-4">Conoce más <i class="fa-solid fa-arrow-right ms-2"></i></a>
+                        </button>
+                    </div>
+
+                    <div class="order-1 lg:order-2" data-aos="fade-left" data-aos-duration="1000">
+                        <img src="assets/images/features/MyLaps-bibtag-decoder.jpg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="xl:py-24 py-16">
+                <div class="grid lg:grid-cols-2 grid-cols-1 2xl:gap-24 gap-10 items-center">
+
+                    <div>
+                        <img src="assets/images/features/timetrack-livea-pp.png" data-aos="fade-right" data-aos-duration="1500">
+                    </div>
+
+                    <div>
+                        <h1 class="text-3xl/tight font-medium mt-3 mb-4">Timetrack Live</h1>
+                        <p class="text-gray-500">Vive la emoción de las carreras con la app de <strong>Timetrack</strong>. Accede a resultados en tiempo real, repeticiones en video, comparte tu experiencia y sigue a tus atletas favoritos. Descárgala ya.</p>
+
+                        <div class="flex justify-center space-x-4 mt-12">
+
+                            <a href="https://apps.apple.com/cl/app/timetrack-live/id6445912533?l=en" target="_blank" class="flex items-center justify-center mt-3 text-white bg-black w-60 h-14 rounded-xl">
+                                <div class="mr-3">
+                                    <svg viewBox="0 0 384 512" width="30">
+                                        <path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="text-xs">
+                                        Download on the
+                                    </div>
+                                    <div class="-mt-1 font-sans text-2xl font-semibold">
+                                        Mac App Store
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.sportmaniac_live_app_android.timetrack_live&pli=1" target="_blank" class="flex items-center justify-center w-48 mt-3 text-white bg-black rounded-lg h-14">
+                                <div class="mr-3">
+                                    <svg viewBox="30 336.7 120.9 129.2" width="30">
+                                        <path fill="#FFD400" d="M119.2,421.2c15.3-8.4,27-14.8,28-15.3c3.2-1.7,6.5-6.2,0-9.7  c-2.1-1.1-13.4-7.3-28-15.3l-20.1,20.2L119.2,421.2z">
+                                        </path>
+                                        <path fill="#FF3333" d="M99.1,401.1l-64.2,64.7c1.5,0.2,3.2-0.2,5.2-1.3  c4.2-2.3,48.8-26.7,79.1-43.3L99.1,401.1L99.1,401.1z">
+                                        </path>
+                                        <path fill="#48FF48" d="M99.1,401.1l20.1-20.2c0,0-74.6-40.7-79.1-43.1  c-1.7-1-3.6-1.3-5.3-1L99.1,401.1z">
+                                        </path>
+                                        <path fill="#3BCCFF" d="M99.1,401.1l-64.3-64.3c-2.6,0.6-4.8,2.9-4.8,7.6  c0,7.5,0,107.5,0,113.8c0,4.3,1.7,7.4,4.9,7.7L99.1,401.1z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="text-xs">
+                                        GET IT ON
+                                    </div>
+                                    <div class="-mt-1 font-sans text-xl font-semibold">
+                                        Google Play
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- =========== feature Section end =========== -->
+
+    <!-- =========== services Section Start =========== -->
+    <section class="bg-gray-100 xl:py-24 py-16" id="services">
+        <div class="container" data-aos="fade-up" data-aos-duration="1500">
+            <div class="text-center">
+                <span class="text-sm bg-primary/10 text-primary/90 rounded-full px-3 py-1">Nuestros Servicios</span>
+                
+                <h1 class="text-3xl/tight font-medium mt-3 mb-4">Cronometra tus eventos con precisión</h1>
+                <p class="text-gray-500">Garantiza una experiencia de alta calidad para los participantes. Transforma cada competición en una experiencia inolvidable con nuestro servicio especializado.</p>
+            </div>
+
+            <div class="pt-16">
+                <div class="grid xl:grid-cols-2 grid-cols-1 gap-7">
+                    <div>
+                        <div class="bg-white flex items-center rounded gap-5 p-5">
+                            <img src="assets/images/services/cronometraje-deportivo.jpg" class="w-24"> 
+                            <div>
+                                <h1 class="mb-3">Cronometraje deportivo</h1>
+                                <p class="text-gray-500">Cronometraje preciso para triatlón, running, trail running y ciclismo con tecnología líder.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="bg-white flex items-center rounded gap-5 p-5">
+                            <img src="assets/images/services/resultados.jpg" class="w-24">                           
+
+                            <div>
+                                <h1 class="mb-3">Resultados y clasificaciones</h1>
+                                <p class="text-gray-500">Publicación rápida de resultados, permitiendo acceso inmediato a los datos de clasificaciones</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="bg-white flex items-center rounded gap-5 p-5">
+                            <img src="assets/images/services/kits.jpg" class="w-24">
+                            <div>
+                                <h1 class="mb-3">Entrega de Kits</h1>
+                                <p class="text-gray-500">Gestionamos la entrega de números y chips de competencia con nuestra plataforma, evitando errores y asegurando resultados precisos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="bg-white flex items-center rounded gap-5 p-5">
+                            <img src="assets/images/services/reloj-en-meta.jpg" class="w-24">
+                            <div>
+                                <h1 class="mb-3">Relojes en Meta</h1>
+                                <p class="text-gray-500">Proporcionamos relojes en la meta para mostrar el tiempo transcurrido, liberándote de la búsqueda y gestión de estos sistemas en tu evento.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="bg-white flex items-center rounded gap-5 p-5">
+                            <img src="assets/images/services/numero-en-competencia.jpg" class="w-24">
+                            <div>
+                                <h1 class="mb-3">Números de competencia</h1>
+                                <p class="text-gray-500">Proporcionamos números de Tyvek con alfileres, garantizando una identificación clara y duradera para los participantes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="bg-white flex items-center rounded gap-5 p-5">
+                            <img src="assets/images/services/desarrollo-web.jpg" class="w-24">
+                            <div>
+                                <h1 class="mb-3">Desarrollo Web</h1>
+                                <p class="text-gray-500">Desarrollamos sitios web atractivos y funcionales para carreras deportivas, garantizando una experiencia fluida en inscripciones y resultados.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- =========== services Section end =========== -->
+
+    <!-- =========== cta Section Start =========== -->
+    <section class="pt-20" id="contact">
+        <div class="container">
+            <div class="grid lg:grid-cols-2 grid-cols-1 gap-6">
+                <div data-aos="fade-up" data-aos-duration="600">
+                    <h2 class="md:text-3xl text-xl font-semibold my-5">¿Hablemos?</h2>
+                    <p class="text-slate-700">Si requieres asistencia para cronometrar tu próximo evento deportivo, no dudes en contactarno. Estaremos encantado de agendar una llamada contigo y discutir todos los detalles necesarios.                    </p>
+                    <p class="text-slate-500 mt-12">Escribenos a:</p>
+                    <h4>
+                        <a href="mailto:&#99;&#111;&#110;&#116;&#97;&#99;&#116;&#111;&#64;&#116;&#105;&#109;&#101;&#116;&#114;&#97;&#99;&#107;&#46;&#99;&#108;" class="text-lg font-semibold text-slate-600">&#99;&#111;&#110;&#116;&#97;&#99;&#116;&#111;&#64;&#116;&#105;&#109;&#101;&#116;&#114;&#97;&#99;&#107;&#46;&#99;&#108;</a>
+                    </h4>
+                    
+                </div>
+
+                <div data-aos="fade-up" data-aos-duration="900">
+                    <form id="contact-form"  class="w-full" action="https://formspree.io/f/xqkvwabj" method="POST">
+                        <div>
+                            <input class="w-full text-gray-700 border border-slate-200 rounded py-3 px-4 mb-4 leading-tight focus:outline-none" id="grid-first-name" type="text" placeholder="Nombre">
+                            <input class="w-full text-gray-700 border border-slate-200 rounded py-3 px-4 mb-4 leading-tight focus:outline-none" id="email" name="email" type="email" autocomplete="email" placeholder="E-mail">
+                            <textarea class="w-full text-gray-700 border border-slate-200 rounded py-3 px-4 mb-4 leading-tight focus:outline-none" id="about" name="about" rows="5" placeholder="Cuentanos sobre tu Carrera!"></textarea>
+                        </div>
+                        <div class="flex justify-end">
+                            <button type="submit" class="py-3 px-6 rounded border border-red-500 font-semibold text-white bg-red-500 hover:shadow-lg hover:shadow-red-500/50 focus:outline focus:outline-red-500/50 transition-all duration-500">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="mt-10">
+        </div>
+    </section>
+    <!-- =========== cta Section End =========== -->
+
+    @@include('./partials/footer.html')
+
+    @@include('./partials/back-to-top.html')
+
+    @@include('./partials/footer-scripts.html')
+
+</body>
+
+</html>
