@@ -141,6 +141,13 @@ const icons = function () {
         .pipe(dest(out));
 };
 
+// Nueva tarea para copiar sitemap.xml y robots.txt
+const copy = function () {
+    return src('src/{sitemap.xml,robots.txt}')
+        .pipe(dest('dist/'));
+};
+
+
 // live browser loading
 const initBrowserSync = function (done) {
     const startPath = "/index.html";
@@ -184,7 +191,7 @@ function watchFiles() {
 exports.default = series(
     html,
     vendor,
-    parallel(data, fonts, images, javascript, style, icons),
+    parallel(data, fonts, images, javascript, style, icons, copy),
     parallel(watchFiles, initBrowserSync)
 );
 
@@ -198,5 +205,5 @@ exports.build = series(
     clean,
     html,
     vendor,
-    parallel(data, fonts, imagesCompression, javascript, style, icons)
+    parallel(data, fonts, imagesCompression, javascript, style, icons, copy)
 );
