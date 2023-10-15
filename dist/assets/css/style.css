@@ -1595,6 +1595,10 @@ header.dark.nav-sticky .navbar-nav .nav-link:is(.active, :active, :focus, :hover
     font-size: 3rem;
     line-height: 1.25;
   }
+  .md\:text-xl{
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
   .md\:after\:h-6::after{
     content: var(--tw-content);
     height: 1.5rem;

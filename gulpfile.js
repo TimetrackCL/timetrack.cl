@@ -147,6 +147,16 @@ const copy = function () {
         .pipe(dest('dist/'));
 };
 
+// const generateCriticalCSS = function() {
+//     return src('dist/*.html')
+//         .pipe(critical.stream({
+//             base: 'dist/',
+//             inline: true,
+//             css: ['dist/assets/css/style.min.css']
+//         }))
+//         .pipe(dest('dist'));
+// };
+
 
 // live browser loading
 const initBrowserSync = function (done) {
@@ -206,4 +216,5 @@ exports.build = series(
     html,
     vendor,
     parallel(data, fonts, imagesCompression, javascript, style, icons, copy)
+    
 );
