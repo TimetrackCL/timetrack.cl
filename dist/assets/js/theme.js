@@ -231,23 +231,27 @@ function init() {
               document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
               link.classList.add('active');
             });
-          });
+        });
 
-          let observer = new IntersectionObserver((entries) => {
+        let observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 let id = entry.target.getAttribute('id');
-                if (entry.intersectionRatio > 0) {
-                    document.querySelector(`.nav-link[href="#${id}"]`).classList.add('active');
-                } else {
-                    document.querySelector(`.nav-link[href="#${id}"]`).classList.remove('active');
+                let navLink = document.querySelector(`.nav-link[href="/#${id}"]`);
+        
+                if (id && navLink) {  // Agregada validación para navLink
+                    if (entry.intersectionRatio > 0) {
+                        navLink.classList.add('active');
+                    } else {
+                        navLink.classList.remove('active');
+                    }
                 }
             });
         });
         
-        // Observar todas las secciones
         document.querySelectorAll('section').forEach(section => {
             observer.observe(section);
         });
+        
 
         
     }
