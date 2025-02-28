@@ -1,0 +1,6 @@
+.hero-section {
+    @apply relative pt-44 pb-44 bg-gradient-to-t from-slate-500/10 overflow-x-hidden;
+    background-image: url('/assets/images/hero/hero-7.jpg');
+    background-size: cover;
+    background-position: center;
+}
