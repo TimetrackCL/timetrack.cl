@@ -1493,13 +1493,13 @@ header.dark.nav-sticky .navbar-nav .nav-link:is(.active, :active, :focus, :hover
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   padding-top: 11rem;
   padding-bottom: 11rem;
-  background-image: url("/assets/images/hero/hero-7-mobile.jpg");
+  background-image: url("../images/hero/hero-7-mobile.jpg");
   background-position: left;
 }
 @media (min-width: 768px) {
   .hero-section {
     background-size: cover;
-    background-image: url("/assets/images/hero/hero-7.jpg");
+    background-image: url("../images/hero/hero-7.jpg");
   }
 }
 .after\:absolute::after{
