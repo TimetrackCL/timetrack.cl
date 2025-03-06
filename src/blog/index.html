@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    @@include("../partials/title-meta.html", {"title": "Blog"})
+
+    @@include('../partials/head-css.html')
+</head>
+
+<body class="text-gray-700">
+
+    @@include('../partials/navbar.html', {"link-color": "dark"})
+
+
+    <section class="pt-36 pb-20">
+        <div class="container">
+
+            <div class="absolute inset-0 h-96 bg-cover bg-no-repeat bg-center bg-[url('/assets/images/blog/hero-2.png')]">
+                <div class="relative w-full h-full z-30 bg-black/10"></div>
+            </div>
+
+            <div class="relative lg:w-3/5 mx-auto z-30">
+                <div class="text-center text-white">
+                    <h2 class="text-5xl font-semibold mb-8">Blog</h2>
+                    <p class="text-base/relaxed tracking-wide">Descubre las últimas novedades sobre cronometraje deportivo, tecnología MyLaps, consejos para organizadores y experiencias de nuestros clientes en eventos deportivos por todo Chile.</p>
+                    <p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========== listing Section Start =========== -->
+    <section class="py-24">
+        <div class="container">
+
+            <div class="flex items-center gap-2">
+                <p>Tags:</p>
+                <div class="flex flex-wrap items-center gap-1">
+                    <a href="#" class="border border-gray-300 rounded-md text-xs font-medium tracking-wider transition-all duration-150 hover:shadow-lg focus:shadow-lg py-2 px-3">Cronometraje</a>
+                    <a href="#" class="border border-gray-300 rounded-md text-xs font-medium tracking-wider transition-all duration-150 hover:shadow-lg focus:shadow-lg py-2 px-3">Tecnología</a>
+                    <a href="#" class="border border-gray-300 rounded-md text-xs font-medium tracking-wider transition-all duration-150 hover:shadow-lg focus:shadow-lg py-2 px-3">Eventos</a>
+                    <a href="#" class="border border-gray-300 rounded-md text-xs font-medium tracking-wider transition-all duration-150 hover:shadow-lg focus:shadow-lg py-2 px-3">Tutoriales</a>
+                    <a href="#" class="border border-gray-300 rounded-md text-xs font-medium tracking-wider transition-all duration-150 hover:shadow-lg focus:shadow-lg py-2 px-3">Running</a>
+                    <a href="#" class="border border-gray-300 rounded-md text-xs font-medium tracking-wider transition-all duration-150 hover:shadow-lg focus:shadow-lg py-2 px-3">Triatlón</a>
+                    <a href="#" class="border border-gray-300 rounded-md text-xs font-medium tracking-wider transition-all duration-150 hover:shadow-lg focus:shadow-lg py-2 px-3">Ciclismo</a>
+                    <a href="#" class="border border-gray-300 rounded-md text-xs font-medium tracking-wider transition-all duration-150 hover:shadow-lg focus:shadow-lg py-2 px-3">Tips</a>
+                    <a href="#" class="border border-gray-300 rounded-md text-xs font-medium tracking-wider transition-all duration-150 hover:shadow-lg focus:shadow-lg py-2 px-3">Noticias</a>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 grid-cols-1 gap-10 items-center lg:py-16 py-14" data-aos="fade-up" data-aos-duration="300">
+
+                <div class="lg:col-span-2">
+                    <div class="grid md:grid-cols-5 gap-10">
+
+                        <div class="md:col-span-2 col-span-3">
+                            <img src="/assets/images/blog/1-mini-photo-blog.jpg" class="w-full h-full rounded-md">
+                        </div>
+
+                        <div class="col-span-3">
+                            <div class="flex flex-col gap-14 justify-between xl:h-full">
+                                <div>
+                                    <span class="bg-orange-500/10 text-orange-500 font-medium rounded-md text-xs py-1 px-2">
+                                        <a href="/blog/tag/tecnologia">Tecnología</a>
+                                    </span>
+                                    <h1 class="text-lg my-3 transition-all hover:text-primary">
+                                        <a href="/blog/como-funciona-cronometraje-chip">Cronometraje de Carreras con Chip: ¿Cómo Funciona y Por Qué Es la Mejor Opción?</a>
+                                    </h1>
+                                    <p class="text-sm/relaxed tracking-wider text-gray-500">
+                                        El cronometraje con chip es un sistema basado en tecnología RFID que permite medir el tiempo exacto de cada corredor en una competencia. Descubre cómo funciona y sus beneficios...
+                                        <a href="/blog/como-funciona-cronometraje-chip.html" class="text-primary">leer más</a>
+                                    </p>
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <img src="/assets/images/avatars/mcantillana.jpg" class="h-10 w-10 rounded-md" alt="Miguel Cantillana">
+                                        <div>
+                                            <h6 class="text-sm transition-all hover:text-primary">
+                                                <a href="#">Miguel Cantillana</a>
+                                            </h6>
+                                            <p class="text-sm text-gray-500">01 Mar, 2025</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                
+            </div>
+
+            <div class="grid lg:grid-cols-3 grid-cols-1 gap-6 lg:py-16 py-14" data-aos="fade-up">
+                <div>
+                    <img src="/assets/images/blog/mini-photo-como-elegir-el-mejor-sistema-de-cronometraje-para-carreras.jpg" class="rounded-md mb-5">
+
+                    <span class="bg-orange-500/10 text-orange-500 font-medium rounded-md text-xs py-1 px-2">
+                        <a href="#">Tecnología</a>
+                    </span>
+                    <h1 class="text-lg my-3 transition-all hover:text-primary">
+                        <a href="/blog/como-elegir-el-mejor-sistema-de-cronometraje-para-carreras">¿Cómo Elegir el Mejor Sistema de Cronometraje para Carreras?</a>
+                    </h1>
+                    <p class="text-sm/relaxed tracking-wider text-gray-500">
+                        Para productoras de eventos deportivos, elegir el sistema de cronometraje adecuado es una decisión estratégica. Descubre los factores clave para elegir...
+                        <a href="/blog/como-elegir-el-mejor-sistema-de-cronometraje-para-carreras" class="text-primary">leer más</a>
+                    </p>
+                </div>
+
+
+
+                <div>
+                    <img src="/assets/images/blog/mini-photo-tiempo-chip-vs-tiempo-disparo.jpg" class="rounded-md mb-5" alt="Tiempo Chip vs Tiempo Gunshot">
+
+                    <span class="bg-orange-500/10 text-orange-500 font-medium rounded-md text-xs py-1 px-2"><a href="#">Tecnología</a></span>
+                    <h1 class="text-lg my-3 transition-all hover:text-primary"><a href="/blog/tiempo-chip-vs-tiempo-disparo">Tiempo Chip vs. Tiempo Gunshot: ¿Cuál es la Diferencia?</a></h1>
+                    <p class="text-sm/relaxed tracking-wider text-gray-500">Descubre la diferencia entre el tiempo chip y el tiempo gunshot, cuál es más preciso y cuál se utiliza en competencias oficiales...
+                        <a href="/blog/tiempo-chip-vs-tiempo-disparo" class="text-primary">leer más</a>
+                    </p>
+                </div>
+            </div>
+
+            
+                        
+
+        </div>
+    </section>
+    <!-- =========== listing Section end =========== -->
+
+   
+    <!-- @@include('../partials/section-contact.html') -->
+    
+
+    @@include('../partials/footer.html')
+
+
+    @@include('../partials/back-to-top.html')
+
+    @@include('../partials/footer-scripts.html')
+
+</body>
+
+</html>

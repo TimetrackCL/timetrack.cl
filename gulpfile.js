@@ -41,7 +41,7 @@ const html = function () {
     const srcPath = paths.baseSrc + "/";
     const out = paths.baseDist;
     return src([
-        srcPath + "*.html",
+        srcPath + "**/*.html",
         srcPath + "*.ico", // favicons
         srcPath + "*.png",
     ])
