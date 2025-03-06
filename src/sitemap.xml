@@ -19,5 +19,32 @@
   <priority>0.80</priority>
 </url>
 
+<url>
+  <loc>https://timetrack.cl/blog/</loc>
+  <lastmod>2024-03-06T00:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://timetrack.cl/blog/como-funciona-cronometraje-chip</loc>
+  <lastmod>2024-03-01T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.70</priority>
+</url>
+
+<url>
+  <loc>https://timetrack.cl/blog/como-elegir-el-mejor-sistema-de-cronometraje-para-carreras</loc>
+  <lastmod>2024-03-06T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.70</priority>
+</url>
+
+<url>
+  <loc>https://timetrack.cl/blog/tiempo-chip-vs-tiempo-disparo</loc>
+  <lastmod>2024-03-06T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.70</priority>
+</url>
 
 </urlset>
