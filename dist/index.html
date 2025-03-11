@@ -355,67 +355,153 @@
     </section>
     <!-- =========== services Section end =========== -->
 <!-- =========== Options Section Start =========== -->
-<section class="py-20">
+<section class="py-20 bg-gray-50">
     <div class="container">
         <div class="text-center" data-aos="fade-up">
-            <span class="text-sm font-medium py-1 px-3 rounded-full text-primary bg-primary/10">Eventos</span>
+            <span class="text-sm font-medium py-1 px-3 rounded-full text-primary bg-primary/10">Novedades</span>
             <h2 class="md:text-3xl text-xl font-semibold my-5">Nuestros próximos eventos</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">Mantente informado sobre nuestros próximos eventos y las últimas noticias del mundo del cronometraje deportivo.</p>
         </div>
 
-        <div class="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-6 mt-16">
-            <div class="shadow-lg rounded" data-aos="fade-up" data-aos-duration="1000">
-                <span class="absolute top-3 bg-blue-500 p-1 pe-6 text-sm font-semibold text-white" style="clip-path: polygon(0% 0%, 100% 0, 90% 49%, 100% 99%, 0% 100%);">Trail Running</span>
-                <img src="/assets/images/events/futangue_challengue_2025.jpg" alt="Futangue Challenge by ASICS - 2025" class="rounded-t">
-                <div class="p-5">
-                    <h4 class="text-lg font-medium text-primary mb-2">Futangue Challenge by ASICS - 2025</h4>
-                    <p class="text-sm text-slate-500">Sumérgete en una experiencia única en la Patagonia Norte. El Futangue Challenge by ASICS te invita a recorrer senderos naturales entre bosques milenarios y vistas panorámicas impresionantes. Este 8 y 9 de febrero de 2025, sé parte de una de las carreras de trail running más espectaculares de Chile.</p>
-                </div>
-                <div class="p-5 pt-0">
-                    <p class="flex items-center gap-3">
-                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                        </svg>
-                        <a href="https://www.futanguechallenge.cl/" class="text-sm font-medium text-slate-500" target="_blank">Sitio Oficial de Futangue Challenge</a>
-                    </p>
-                </div>
-            </div>
-            <div class="shadow-lg rounded" data-aos="fade-up" data-aos-duration="600">
-                <span class="absolute top-3 bg-orange-500 p-1 pe-6 text-sm font-semibold text-white" style="clip-path: polygon(0% 0%, 100% 0, 90% 49%, 100% 99%, 0% 100%);">Running</span>
-                <img src="assets/images/events/stgo21k_2025.jpg" alt="STGO 21K by Hoka Marzo 2025" class="rounded-t">
-                <div class="p-5">
-                    <h4 class="text-lg font-medium text-primary mb-2">STGO 21K by Hoka Marzo 2025</h4>
-                    <p class="text-sm text-slate-500">Participa de esta increíble carrera, que cobra vida en los vibrantes meses de marzo y agosto del 2025. Te invitamos a desafiar tus límites y superar tus marcas. STGO21K, está diseñado para llevarte a través de un recorrido desafiante que no solo despierta la pasión por correr, sino que también ofrece la oportunidad perfecta para mostrar lo capaz que eres.</p>
-                </div>
-                <div class="p-5 pt-0">
-                    <p class="flex items-center gap-3">
-                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                        </svg>
-                        <a href="https://www.futanguechallenge.cl/" class="text-sm font-medium text-slate-500">Sitio Oficial de Stgo21K</a>
-                    </p>
-                </div>
-            </div>           
+        <div class="flex flex-col md:flex-row justify-between gap-8 mt-12">
+            <!-- SECCIÓN DE NOTICIAS -->
+            <section class="w-full md:w-1/2">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-2xl font-bold text-gray-900">Blog</h2>
+                        <a href="/blog" class="text-primary hover:text-primary/80 text-sm font-medium">Ver todas</a>
+                    </div>
+                    <div class="space-y-6">
+                        <!-- Noticia 1 -->
+                        <article class="flex gap-4 p-4 rounded-lg hover:bg-gray-50 transition-all duration-300">
+                            <img src="/assets/images/blog/1-mini-photo-blog.jpg" 
+                                 alt="Cronometraje con Chip" 
+                                 class="w-24 h-24 rounded-lg object-cover">
+                            <div>
+                                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-orange-100 text-orange-600">Tecnología</span>
+                                <h3 class="font-semibold mt-2 text-gray-900">Cronometraje de Carreras con Chip: ¿Cómo Funciona?</h3>
+                                <p class="text-sm text-gray-600 mt-1 line-clamp-2">El cronometraje con chip es un sistema basado en tecnología RFID que permite medir el tiempo exacto de cada corredor...</p>
+                                <div class="flex items-center gap-2 mt-2">
+                                    <span class="text-sm text-gray-500">01 Mar, 2025</span>
+                                    <a href="/blog/como-funciona-cronometraje-chip" class="text-sm text-primary">Leer más →</a>
+                                </div>
+                            </div>
+                        </article>
 
-            <div class="shadow-lg rounded" data-aos="fade-up" data-aos-duration="1400">
-                <span class="absolute top-3 bg-orange-500 p-1 pe-6 text-sm font-semibold text-white" style="clip-path: polygon(0% 0%, 100% 0, 90% 49%, 100% 99%, 0% 100%);">Running</span>
-                <img src="assets/images/events/logo_maraton_armada_2025.jpg" alt="Media Maratón Armada de Chile 2025" class="rounded-t">
-                <div class="p-5">
-                    <h4 class="text-lg font-medium text-primary mb-2">Media Maratón Armada de Chile 2025</h4>
-                    <p class="text-sm text-slate-500">La Armada de Chile organiza este evento masivo con 12.000 cupos disponibles. Incluye corrida, clases dirigidas, operativos de salud, medicina alternativa, regalos y sorteos de marcas auspiciadoras. Disfruta de atracciones civiles y militares en un evento abierto para chilenos y extranjeros.</p>
+                        <!-- Noticia 2 -->
+                        <article class="flex gap-4 p-4 rounded-lg hover:bg-gray-50 transition-all duration-300">
+                            <img src="/assets/images/blog/mini-photo-como-elegir-el-mejor-sistema-de-cronometraje-para-carreras.jpg" 
+                                 alt="Sistemas de Cronometraje" 
+                                 class="w-24 h-24 rounded-lg object-cover">
+                            <div>
+                                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-orange-100 text-orange-600">Tecnología</span>
+                                <h3 class="font-semibold mt-2 text-gray-900">¿Cómo Elegir el Mejor Sistema de Cronometraje?</h3>
+                                <p class="text-sm text-gray-600 mt-1 line-clamp-2">Para productoras de eventos deportivos, elegir el sistema de cronometraje adecuado es una decisión estratégica...</p>
+                                <div class="flex items-center gap-2 mt-2">
+                                    <span class="text-sm text-gray-500">01 Mar, 2025</span>
+                                    <a href="/blog/como-elegir-el-mejor-sistema-de-cronometraje-para-carreras" class="text-sm text-primary">Leer más →</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Noticia 3 -->
+                        <article class="flex gap-4 p-4 rounded-lg hover:bg-gray-50 transition-all duration-300">
+                            <img src="/assets/images/blog/mini-photo-tiempo-chip-vs-tiempo-disparo.jpg" 
+                                 alt="Tiempo Chip vs Tiempo Gunshot" 
+                                 class="w-24 h-24 rounded-lg object-cover">
+                            <div>
+                                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-orange-100 text-orange-600">Tecnología</span>
+                                <h3 class="font-semibold mt-2 text-gray-900">Tiempo Chip vs. Tiempo Gunshot: ¿Cuál es la Diferencia?</h3>
+                                <p class="text-sm text-gray-600 mt-1 line-clamp-2">Descubre la diferencia entre el tiempo chip y el tiempo gunshot, cuál es más preciso y cuál se utiliza en competencias oficiales...</p>
+                                <div class="flex items-center gap-2 mt-2">
+                                    <span class="text-sm text-gray-500">01 Mar, 2025</span>
+                                    <a href="/blog/tiempo-chip-vs-tiempo-disparo" class="text-sm text-primary">Leer más →</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
                 </div>
-                <div class="p-5 pt-0">
-                    <p class="flex items-center gap-3">
-                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                        </svg>
-                        <a href="https://www.maratonarmada.cl/" class="text-sm font-medium text-slate-500" target="_blank">Sitio Oficial Maraton Armada</a>
-                    </p>
+            </section>
+            
+            <!-- SECCIÓN DE CALENDARIO -->
+            <section class="w-full md:w-1/2">
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-2xl font-bold text-gray-900">Calendario</h2>
+                        <!-- <a href="/calendario" class="text-primary hover:text-primary/80 text-sm font-medium">Ver todo</a> -->
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                        <div class="flex items-center justify-between border-b border-gray-200 pb-4">
+                            <div class="flex items-center gap-3">
+                                <!-- <span class="text-3xl font-bold text-primary">Marzo</span> -->
+                                <span class="text-xl text-gray-600">Proximos Eventos</span>
+                            </div>
+                            <!-- <div class="flex gap-2">
+                                <button class="p-2 rounded-full hover:bg-gray-200">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                                    </svg>
+                                </button>
+                                <button class="p-2 rounded-full hover:bg-gray-200">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                    </svg>
+                                </button>
+                            </div> -->
+                        </div>
+
+                        <div class="space-y-4 mt-4">
+                            <!-- Evento 1 -->
+                            <a href="https://www.santiago21k.cl/" target="_blank" class="block">
+                                <div class="flex items-center gap-4 bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+                                    <div class="flex flex-col items-center justify-center w-16 h-16 bg-primary/10 rounded-lg">
+                                        <span class="text-xl font-bold text-primary">30</span>
+                                        <span class="text-xs text-gray-600">MAR</span>
+                                    </div>
+                                    <div class="flex-grow">
+                                        <h3 class="font-semibold text-gray-900">STGO 21K by Hoka</h3>
+                                        <div class="flex items-center gap-3 mt-1">
+                                            <span class="text-sm text-gray-600">
+                                                <i class="fas fa-map-marker-alt mr-1"></i>
+                                                Las Condes
+                                            </span>
+                                            <span class="text-sm text-gray-600">
+                                                <i class="fas fa-clock mr-1"></i>
+                                                07:30 AM
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <!-- Evento 2 -->
+                            <a href="https://www.maratonarmada.cl/" target="_blank" class="block">
+                                <div class="flex items-center gap-4 bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+                                    <div class="flex flex-col items-center justify-center w-16 h-16 bg-primary/10 rounded-lg">
+                                        <span class="text-xl font-bold text-primary">04</span>
+                                        <span class="text-xs text-gray-600">MAY</span>
+                                    </div>
+                                    <div class="flex-grow">
+                                        <h3 class="font-semibold text-gray-900">Media Maratón y Corrida Familiar Armada de Chile</h3>
+                                        <div class="flex items-center gap-3 mt-1">
+                                            <span class="text-sm text-gray-600">
+                                                <i class="fas fa-map-marker-alt mr-1"></i>
+                                                Viña del Mar
+                                            </span>
+                                            <span class="text-sm text-gray-600">
+                                                <i class="fas fa-clock mr-1"></i>
+                                                08:00 AM
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </section>
+        </div>        
     </div>
 </section>
 <!-- =========== Options Section End =========== -->
