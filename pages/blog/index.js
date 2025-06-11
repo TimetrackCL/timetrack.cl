@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import { loadHtml } from '../lib/loadHtml'
+import { loadHtml } from '../../lib/loadHtml'
 
 export async function getStaticProps() {
-  return { props: loadHtml('index.html') }
+  return { props: loadHtml('blog/index.html') }
 }
 
-export default function Home({ title, description, canonical, body }) {
+export default function BlogIndex({ title, description, canonical, body }) {
   return (
     <>
       <Head>

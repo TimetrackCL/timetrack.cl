@@ -2,10 +2,10 @@ import Head from 'next/head'
 import { loadHtml } from '../lib/loadHtml'
 
 export async function getStaticProps() {
-  return { props: loadHtml('index.html') }
+  return { props: loadHtml('technology-mylaps-bibtag-system-components.html') }
 }
 
-export default function Home({ title, description, canonical, body }) {
+export default function Technology({ title, description, canonical, body }) {
   return (
     <>
       <Head>

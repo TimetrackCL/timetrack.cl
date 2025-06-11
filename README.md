@@ -9,6 +9,6 @@
 
 ## Migración a Next.js
 
-Esta versión incluye una configuración básica de [Next.js](https://nextjs.org/) para poder migrar progresivamente el proyecto. Las páginas se encuentran en la carpeta `pages` y utilizan Tailwind CSS para los estilos.
+Esta versión incluye una configuración de [Next.js](https://nextjs.org/) que genera las páginas del sitio a partir de los archivos HTML ya existentes en `dist/`. Todo el contenido está disponible en la carpeta `pages` y los recursos estáticos en `public/assets`.
 
 El antiguo `gulpfile.js` permanece para referencia de las tareas de compilación previas.
