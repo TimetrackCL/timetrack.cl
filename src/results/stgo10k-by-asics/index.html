@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    @@include("../../partials/title-meta.html", {
+        "title": "Resultados Stgo10K by Asics | Timetrack", 
+        "description": "Resultados oficiales del Stgo10K by Asics. Consulta posiciones, tiempos y clasificaciones.",
+        "canonical": "https://timetrack.cl/results/stgo10k-by-asics"
+    })
+
+    @@include('../../partials/head-css.html')
+</head>
+
+<body class="text-gray-700">
+
+    @@include('../../partials/navbar.html', {"link-color": "dark", "header-class": "nav-sticky"})
+
+    <!-- Breadcrumbs -->
+    <section class="pt-20">
+        <div class="container">
+            <div class="py-14">
+                <div class="flex flex-wrap items-center gap-2 bg-gray-100 py-2 px-3">
+                    <a href="/" class="transition-all hover:text-primary">Home</a> /
+                    <a href="/results/" class="transition-all hover:text-primary">Resultados</a> /
+                    <p class="text-gray-500">Stgo10K by Asics</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <section class="pb-20">
+        <div class="container">
+            
+            
+            <style>
+                :root {
+                        --primary-color: #1D67FF;
+                        --split-selected-color: var(--primary-color);
+                        --light-background: #f3f3f3;
+                        --dark-background: #888;
+                        --web-background: #fff;
+                        --font-size: 12px;
+                        --icon-size: 30px;
+                        --navigation-padding: 20px;
+                        --detail-item-font-size: 20px;
+                        --detail-item-title-font-size: 16px;
+                        --detail-subtitle-font-size: 14px;
+                        --detail-table-font-size: 14px;
+                    }
+            </style>
+            <div id="ranking-container-68f8de49-a044-4b22-b1bc-4bdaac1f1473-10K"></div>
+            <script type="text/javascript" 
+                    onload='window.tsRankings.plugin({
+                    config: { api: "https://rankings-api.timingsense.cloud/api/competition" },
+                    container: document.getElementById("ranking-container-68f8de49-a044-4b22-b1bc-4bdaac1f1473-10K"),
+                    competitionId: "68f8de49-a044-4b22-b1bc-4bdaac1f1473",
+                    event: decodeURI("10K"),
+                    withSummary: true,
+                    defaultTab: "ranking",
+                    translations: {
+                        en: {
+                            tableHeaders: {
+                                pos: "Position",
+                                dorsal: "BiB",
+                                name: "Name",
+                                surname: "Surname",
+                                club: "Club",
+                                time: "Time",
+                                status: "Status",
+                            },
+                            fieldValues: {
+                                status: {
+                                    finished: "Finished",
+                                    retired: "Withdrawn"
+                                }
+                            }
+                        }
+                    }
+                });'
+                    src="https://development.timingsense.cloud/ts-rankings/main.js" 
+            >
+            </script>
+            
+            
+            
+        </div>
+    </section>
+
+    @@include('../../partials/footer.html')
+    @@include('../../partials/back-to-top.html')
+    @@include('../../partials/footer-scripts.html')
+
+</body>
+
+</html>

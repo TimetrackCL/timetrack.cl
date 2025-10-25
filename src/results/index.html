@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    @@include("../partials/title-meta.html", {
+        "title": "Resultados | Timetrack",
+        "description": "Resultados de los eventos deportivos que han utilizado nuestros sistemas de cronometraje.",
+        "canonical": "https://timetrack.cl/results/"
+    })
+
+    @@include('../partials/head-css.html')
+</head>
+
+<body class="text-gray-700">
+
+    @@include('../partials/navbar.html', {"link-color": "dark"})
+
+
+    <section class="pt-36 pb-20">
+        <div class="container">
+
+            <div class="absolute inset-0 h-[300px] bg-cover bg-no-repeat bg-center bg-[url('/assets/images/blog/hero-2.png')]">
+                <div class="relative w-full h-full z-30 bg-black/10"></div>
+            </div>
+
+            <div class="relative lg:w-3/5 mx-auto z-30">
+                <div class="text-center text-white">
+                    <h2 class="text-5xl font-semibold mb-8">Resultados</h2>
+                    <p class="text-base/relaxed tracking-wide">Resultados de los eventos deportivos que han utilizado nuestros sistemas de cronometraje.</p>
+                    <p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========== Eventos Section Start =========== -->
+    <section class="py-24">
+        <div class="container">
+
+            <!-- Filtros -->
+            <div class="flex flex-wrap items-center gap-4 mb-12">
+                <p class="font-semibold">Filtrar por:</p>
+                <div class="flex flex-wrap items-center gap-2">
+                    <button onclick="filterEvents('all')" class="filter-btn active border border-gray-300 rounded-md text-xs font-medium tracking-wider transition-all duration-150 hover:shadow-lg hover:border-primary py-2 px-4">
+                        Todos
+                    </button>
+                    <button onclick="filterEvents('running')" class="filter-btn border border-gray-300 rounded-md text-xs font-medium tracking-wider transition-all duration-150 hover:shadow-lg hover:border-primary py-2 px-4">
+                        Running
+                    </button>
+                    <button onclick="filterEvents('triatlon')" class="filter-btn border border-gray-300 rounded-md text-xs font-medium tracking-wider transition-all duration-150 hover:shadow-lg hover:border-primary py-2 px-4">
+                        Triatlón
+                    </button>
+                    <button onclick="filterEvents('ciclismo')" class="filter-btn border border-gray-300 rounded-md text-xs font-medium tracking-wider transition-all duration-150 hover:shadow-lg hover:border-primary py-2 px-4">
+                        Ciclismo
+                    </button>
+                    <button onclick="filterEvents('trail')" class="filter-btn border border-gray-300 rounded-md text-xs font-medium tracking-wider transition-all duration-150 hover:shadow-lg hover:border-primary py-2 px-4">
+                        Trail
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid de Eventos -->
+            <div id="events-container" class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
+                <!-- Los eventos se cargarán dinámicamente aquí -->
+            </div>
+
+            <!-- Mensaje cuando no hay eventos -->
+            <div id="no-events" class="hidden text-center py-12">
+                <p class="text-gray-500 text-lg">No se encontraron eventos para esta categoría</p>
+            </div>
+
+        </div>
+    </section>
+    <!-- =========== Eventos Section end =========== -->
+
+   
+    <!-- @@include('../partials/section-contact.html') -->
+    
+
+    @@include('../partials/footer.html')
+
+
+    @@include('../partials/back-to-top.html')
+
+    @@include('../partials/footer-scripts.html')
+
+    <!-- Script para cargar eventos dinámicamente -->
+    <script>
+        // Datos de eventos (puedes moverlo a un archivo JSON externo)
+        const eventsData = [
+            {
+                id: 1,
+                title: "Stgo10K by Asics 2025",
+                date: "2025-10-26",
+                location: "Ñuñoa, Chile",
+                category: "running",
+                image: "/assets/images/events/KV-400x400px-100_V2.jpg",
+                participants: 2000,
+                linkType: "internal", // "internal" o "external"
+                link: "/results/stgo10k-by-asics/",
+                resultsAvailable: false // Cambiar a true cuando los resultados estén disponibles
+            },
+            
+        ];
+
+        let currentFilter = 'all';
+
+        // Función para renderizar eventos
+        function renderEvents(filter = 'all') {
+            const container = document.getElementById('events-container');
+            const noEventsMsg = document.getElementById('no-events');
+            
+            // Filtrar eventos
+            const filteredEvents = filter === 'all' 
+                ? eventsData 
+                : eventsData.filter(event => event.category === filter);
+
+            // Limpiar contenedor
+            container.innerHTML = '';
+
+            // Mostrar/ocultar mensaje de "no hay eventos"
+            if (filteredEvents.length === 0) {
+                noEventsMsg.classList.remove('hidden');
+                return;
+            } else {
+                noEventsMsg.classList.add('hidden');
+            }
+
+            // Renderizar eventos
+            filteredEvents.forEach(event => {
+                const eventCard = createEventCard(event);
+                container.appendChild(eventCard);
+            });
+        }
+
+        // Función para crear tarjeta de evento
+        function createEventCard(event) {
+            const card = document.createElement('div');
+            card.className = 'group bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl hover:border-gray-300 transition-all duration-300';
+            card.setAttribute('data-aos', 'fade-up');
+
+            const categoryColors = {
+                running: 'bg-blue-500/10 text-blue-600',
+                triatlon: 'bg-purple-500/10 text-purple-600',
+                ciclismo: 'bg-green-500/10 text-green-600',
+                trail: 'bg-orange-500/10 text-orange-600'
+            };
+
+            const categoryNames = {
+                running: 'Running',
+                triatlon: 'Triatlón',
+                ciclismo: 'Ciclismo',
+                trail: 'Trail Running'
+            };
+
+            const formatDate = (dateStr) => {
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                return new Date(dateStr).toLocaleDateString('es-ES', options);
+            };
+
+            const targetAttr = event.linkType === 'external' ? 'target="_blank" rel="noopener noreferrer"' : '';
+            const externalIcon = event.linkType === 'external' ? '<i class="fas fa-external-link-alt ml-1 text-xs"></i>' : '';
+            
+            // Configurar botón según disponibilidad de resultados
+            let buttonHTML;
+            if (event.resultsAvailable) {
+                buttonHTML = `
+                    <a href="${event.link}" ${targetAttr}
+                       class="inline-flex items-center justify-center w-full bg-orange-400 text-white font-medium rounded-lg py-2.5 px-4 hover:bg-orange-500 transition-colors">
+                        Ver Resultados ${externalIcon}
+                    </a>
+                `;
+            } else {
+                buttonHTML = `
+                    <button disabled
+                       class="inline-flex items-center justify-center w-full bg-gray-300 text-gray-500 font-medium rounded-lg py-2.5 px-4 cursor-not-allowed">
+                        <i class="fas fa-clock mr-2"></i>
+                        Resultados Próximamente
+                    </button>
+                `;
+            }
+
+            card.innerHTML = `
+                <div class="relative h-48 overflow-hidden">
+                    <img src="${event.image}" alt="${event.title}" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                         onerror="this.src='/assets/images/hero/hero-1.jpg'">
+                    <div class="absolute top-4 left-4">
+                        <span class="${categoryColors[event.category]} font-semibold rounded-full text-xs py-1.5 px-3">
+                            ${categoryNames[event.category]}
+                        </span>
+                    </div>
+                    ${!event.resultsAvailable ? '<div class="absolute top-4 right-4"><span class="bg-gray-800/80 text-white font-semibold rounded-full text-xs py-1.5 px-3"><i class="fas fa-clock mr-1"></i> Próximamente</span></div>' : ''}
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                        ${event.title}
+                    </h3>
+                    <div class="space-y-2 mb-4">
+                        <div class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-calendar-alt w-5 text-primary"></i>
+                            <span>${formatDate(event.date)}</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-map-marker-alt w-5 text-primary"></i>
+                            <span>${event.location}</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-users w-5 text-primary"></i>
+                            <span>${event.participants.toLocaleString('es-ES')} participantes</span>
+                        </div>
+                    </div>
+                    ${buttonHTML}
+                </div>
+            `;
+
+            return card;
+        }
+
+        // Función para filtrar eventos
+        function filterEvents(category) {
+            currentFilter = category;
+            
+            // Actualizar botones activos
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active', 'bg-primary', 'text-white', 'border-primary');
+            });
+            event.target.classList.add('active', 'bg-primary', 'text-white', 'border-primary');
+            
+            // Renderizar eventos filtrados
+            renderEvents(category);
+        }
+
+        // Inicializar al cargar la página
+        document.addEventListener('DOMContentLoaded', () => {
+            renderEvents();
+        });
+    </script>
+
+    <style>
+        .filter-btn.active {
+            background-color: var(--primary-color, #f97316);
+            color: white;
+            border-color: var(--primary-color, #f97316);
+        }
+    </style>
+
+</body>
+
+</html>
