@@ -47,4 +47,25 @@
   <priority>0.70</priority>
 </url>
 
+<url>
+  <loc>https://timetrack.cl/results/</loc>
+  <lastmod>2025-10-25T00:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.90</priority>
+</url>
+
+<url>
+  <loc>https://timetrack.cl/results/stgo10k-by-asics/</loc>
+  <lastmod>2025-10-25T00:00:00+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://timetrack.cl/results/stgo10k-by-asics/live</loc>
+  <lastmod>2025-10-25T00:00:00+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.85</priority>
+</url>
+
 </urlset>
