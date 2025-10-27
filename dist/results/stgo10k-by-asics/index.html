@@ -27,9 +27,38 @@
     <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css">
     
     <!-- Control de caché para resultados en tiempo real -->
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0, s-maxage=0">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
+    
+    <!-- Script para forzar recarga sin caché -->
+    <script>
+        (function() {
+            // Detectar si la página viene del cache
+            if (performance.navigation.type === 2 || 
+                (performance.getEntriesByType('navigation')[0] && 
+                 performance.getEntriesByType('navigation')[0].type === 'back_forward')) {
+                // Forzar recarga sin caché
+                window.location.reload(true);
+            }
+            
+            // Prevenir cache al salir de la página
+            window.addEventListener('beforeunload', function() {
+                if (window.localStorage) {
+                    localStorage.setItem('timetrack_force_reload_1761577488988', 'true');
+                }
+            });
+            
+            // Verificar si necesitamos forzar recarga
+            if (window.localStorage && localStorage.getItem('timetrack_force_reload_1761577488988') === 'true') {
+                localStorage.removeItem('timetrack_force_reload_1761577488988');
+                if (!sessionStorage.getItem('timetrack_reloaded')) {
+                    sessionStorage.setItem('timetrack_reloaded', 'true');
+                    window.location.reload(true);
+                }
+            }
+        })();
+    </script>
 </head>
 
 <body class="text-gray-700">
@@ -187,7 +216,7 @@
                         }
                     }
                 });'
-                    src="https://development.timingsense.cloud/ts-rankings/main.js?v=1761577120635" 
+                    src="https://development.timingsense.cloud/ts-rankings/main.js?v=1761577488988" 
             >
             </script>
             
