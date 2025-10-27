@@ -141,9 +141,9 @@ const icons = function () {
         .pipe(dest(out));
 };
 
-// Nueva tarea para copiar sitemap.xml y robots.txt
+// Nueva tarea para copiar sitemap.xml, robots.txt y _headers
 const copy = function () {
-    return src('src/{sitemap.xml,robots.txt}')
+    return src('src/{sitemap.xml,robots.txt,_headers}')
         .pipe(dest('dist/'));
 };
 

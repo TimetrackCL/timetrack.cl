@@ -1,0 +1,19 @@
+# Headers para controlar el caché en Cloudflare Pages
+
+# Headers globales para todas las páginas de resultados
+/results/*
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Robots-Tag: noindex
+
+# Headers específicos para eventos en vivo (sin caché)
+/results/*/live.html
+  Cache-Control: no-cache, no-store, must-revalidate
+  Pragma: no-cache
+  Expires: 0
+
+# Headers para la página principal de resultados de stgo10k
+/results/*/index.html
+  Cache-Control: no-cache, no-store, must-revalidate
+  Pragma: no-cache
+  Expires: 0
+

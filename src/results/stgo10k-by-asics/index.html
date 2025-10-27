@@ -9,6 +9,11 @@
     })
 
     @@include('../../partials/head-css.html')
+    
+    <!-- Control de caché para resultados en tiempo real -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
 </head>
 
 <body class="text-gray-700">
@@ -77,7 +82,7 @@
                         }
                     }
                 });'
-                    src="https://development.timingsense.cloud/ts-rankings/main.js" 
+                    src="https://development.timingsense.cloud/ts-rankings/main.js?v=1.0.1" 
             >
             </script>
             
