@@ -15,35 +15,6 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     
-    <!-- Script para forzar recarga sin caché -->
-    <script>
-        (function() {
-            // Detectar si la página viene del cache
-            if (performance.navigation.type === 2 || 
-                (performance.getEntriesByType('navigation')[0] && 
-                 performance.getEntriesByType('navigation')[0].type === 'back_forward')) {
-                // Forzar recarga sin caché
-                window.location.reload(true);
-            }
-            
-            // Prevenir cache al salir de la página
-            window.addEventListener('beforeunload', function() {
-                if (window.localStorage) {
-                    localStorage.setItem('timetrack_force_reload_@@buildVersion', 'true');
-                }
-            });
-            
-            // Verificar si necesitamos forzar recarga
-            if (window.localStorage && localStorage.getItem('timetrack_force_reload_@@buildVersion') === 'true') {
-                localStorage.removeItem('timetrack_force_reload_@@buildVersion');
-                if (!sessionStorage.getItem('timetrack_reloaded')) {
-                    sessionStorage.setItem('timetrack_reloaded', 'true');
-                    window.location.reload(true);
-                }
-            }
-        })();
-    </script>
-    
     <style>
         .title-custom {
             font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
