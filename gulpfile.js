@@ -24,6 +24,9 @@ const paths = {
     configTailwind: "./tailwind.config.js",  // tailwind.config.js file
 };
 
+// Generar versión automática basada en timestamp para cache busting
+const buildVersion = Date.now();
+
 const clean = function (done) {
     del.sync(paths.baseDist, done());
 };
@@ -50,6 +53,9 @@ const html = function () {
                 prefix: "@@",
                 basepath: "@file",
                 indent: true,
+                context: {
+                    buildVersion: buildVersion  // Versión automática para cache busting
+                }
             })
         )
         .pipe(dest(out));
