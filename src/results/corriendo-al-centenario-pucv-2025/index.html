@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    @@include("../../partials/title-meta.html", {
+        "title": "Resultados Corriendo al Centenario PUCV 2025 | Timetrack", 
+        "description": "Resultados oficiales de Corriendo al Centenario PUCV 2025. Consulta posiciones, tiempos y clasificaciones.",
+        "canonical": "https://timetrack.cl/results/corriendo-al-centenario-pucv-2025"
+    })
+
+    @@include('../../partials/head-css.html')
+    
+    <!-- Control de caché para resultados en tiempo real -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0, s-maxage=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+</head>
+
+<body class="text-gray-700">
+
+    @@include('../../partials/navbar.html', {"link-color": "dark", "header-class": "nav-sticky"})
+
+    <!-- Breadcrumbs -->
+    <section class="pt-20">
+        <div class="container">
+            <div class="py-14">
+                <div class="flex flex-wrap items-center gap-2 bg-gray-100 py-2 px-3">
+                    <a href="/" class="transition-all hover:text-primary">Home</a> /
+                    <a href="/results/" class="transition-all hover:text-primary">Resultados</a> /
+                    <p class="text-gray-500">Corriendo al Centenario PUCV 2025</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <section class="pb-20">
+        <div class="container">
+            
+            <style>
+                :root {
+                        --primary-color: #1D67FF;
+                        --split-selected-color: var(--primary-color);
+                        --light-background: #f3f3f3;
+                        --dark-background: #888;
+                        --web-background: #fff;
+                        --font-size: 12px;
+                        --icon-size: 30px;
+                        --navigation-padding: 20px;
+                        --detail-item-font-size: 20px;
+                        --detail-item-title-font-size: 16px;
+                        --detail-subtitle-font-size: 14px;
+                        --detail-table-font-size: 14px;
+                    }
+            </style>
+            <div id="ranking-container-690cea1a-f070-4985-b682-417fac1f0eca-10K"></div>
+            <script type="text/javascript" 
+                    onload='window.tsRankings.plugin({
+                    config: { api: "https://rankings-api.timingsense.cloud/api/competition" },
+                    container: document.getElementById("ranking-container-690cea1a-f070-4985-b682-417fac1f0eca-10K"),
+                    competitionId: "690cea1a-f070-4985-b682-417fac1f0eca",
+                    event: decodeURI("10K%20"),
+                    withSummary: true,
+                    defaultTab: "ranking",
+                    translations: {
+                        en: {
+                            tableHeaders: {
+                                pos: "Position",
+                                dorsal: "BiB",
+                                name: "Name",
+                                surname: "Surname",
+                                club: "Club",
+                                time: "Time",
+                                status: "Status",
+                            },
+                            fieldValues: {
+                                status: {
+                                    finished: "Finished",
+                                    retired: "Withdrawn"
+                                }
+                            }
+                        }
+                    }
+                });'
+                    src="https://development.timingsense.cloud/ts-rankings/main.js" 
+            >
+            </script>
+            
+        </div>
+    </section>
+
+    @@include('../../partials/footer.html')
+    @@include('../../partials/back-to-top.html')
+    @@include('../../partials/footer-scripts.html')
+
+</body>
+
+</html>
