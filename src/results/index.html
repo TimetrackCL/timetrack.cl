@@ -87,7 +87,27 @@
     <!-- Script para cargar eventos dinámicamente -->
     <script>
         // Datos de eventos (puedes moverlo a un archivo JSON externo)
+        // 
+        // Estados disponibles:
+        // - "upcoming": Evento próximo - Muestra badge "Próximamente" y botón deshabilitado
+        // - "live": Evento en vivo - Muestra badge "EN VIVO" y botón rojo que redirige a:
+        //     * Si linkType es "internal": agrega /live al final del link principal
+        //     * Si linkType es "external": usa el campo liveLink
+        // - "finished": Evento finalizado - Sin badge, botón naranja que redirige al link principal
         const eventsData = [
+        {
+                id: 3,
+                title: "Maratón de Molina 2025",
+                date: "2025-11-30",
+                location: "Molina, Curicó, Chile",
+                category: "running",
+                image: "/assets/images/events/maraton-molina-logo-efluj.jpg",
+                participants: 900,
+                linkType: "internal", // "internal" o "external"
+                link: "/results/maraton-de-molina-2025/",
+                status: "upcoming", // "upcoming" | "live" | "finished"
+                liveLink: null // Solo si linkType es "external" y status es "live"
+            },
         {
                 id: 2,
                 title: "Corriendo al Centenario Pucv 2025",
@@ -98,7 +118,8 @@
                 participants: 1500,
                 linkType: "internal", // "internal" o "external"
                 link: "/results/corriendo-al-centenario-pucv-2025/",
-                resultsAvailable: true // Cambiar a true cuando los resultados estén disponibles
+                status: "finished", // "upcoming" | "live" | "finished"
+                liveLink: null // Solo si linkType es "external" y status es "live"
             },
             {
                 id: 1,
@@ -110,7 +131,8 @@
                 participants: 2000,
                 linkType: "internal", // "internal" o "external"
                 link: "/results/stgo10k-by-asics/",
-                resultsAvailable: true // Cambiar a true cuando los resultados estén disponibles
+                status: "finished", // "upcoming" | "live" | "finished"
+                liveLink: null // Solo si linkType es "external" y status es "live"
             },
             
         ];
@@ -170,26 +192,60 @@
                 return new Date(dateStr).toLocaleDateString('es-ES', options);
             };
 
-            const targetAttr = event.linkType === 'external' ? 'target="_blank" rel="noopener noreferrer"' : '';
             const externalIcon = event.linkType === 'external' ? '<i class="fas fa-external-link-alt ml-1 text-xs"></i>' : '';
             
-            // Configurar botón según disponibilidad de resultados
-            let buttonHTML;
-            if (event.resultsAvailable) {
-                buttonHTML = `
-                    <a href="${event.link}" ${targetAttr}
-                       class="inline-flex items-center justify-center w-full bg-orange-400 text-white font-medium rounded-lg py-2.5 px-4 hover:bg-orange-500 transition-colors">
-                        Ver Resultados ${externalIcon}
-                    </a>
-                `;
-            } else {
-                buttonHTML = `
-                    <button disabled
-                       class="inline-flex items-center justify-center w-full bg-gray-300 text-gray-500 font-medium rounded-lg py-2.5 px-4 cursor-not-allowed">
-                        <i class="fas fa-clock mr-2"></i>
-                        Resultados Próximamente
-                    </button>
-                `;
+            // Configurar badge y botón según el estado del evento
+            let badgeHTML = '';
+            let buttonHTML = '';
+            let targetAttr = '';
+            let eventLink = event.link;
+            
+            switch(event.status) {
+                case 'upcoming':
+                    // Evento próximo
+                    badgeHTML = '<div class="absolute top-4 right-4"><span class="bg-gray-800/80 text-white font-semibold rounded-full text-xs py-1.5 px-3"><i class="fas fa-clock mr-1"></i> Próximamente</span></div>';
+                    buttonHTML = `
+                        <button disabled
+                           class="inline-flex items-center justify-center w-full bg-gray-300 text-gray-500 font-medium rounded-lg py-2.5 px-4 cursor-not-allowed">
+                            <i class="fas fa-clock mr-2"></i>
+                            Resultados Próximamente
+                        </button>
+                    `;
+                    break;
+                    
+                case 'live':
+                    // Evento en vivo
+                    badgeHTML = '<div class="absolute top-4 right-4"><span class="bg-red-600 text-white font-semibold rounded-full text-xs py-1.5 px-3 animate-pulse"><i class="fas fa-circle mr-1 text-[0.5rem]"></i> EN VIVO</span></div>';
+                    
+                    // Determinar el link para el live
+                    if (event.linkType === 'external' && event.liveLink) {
+                        eventLink = event.liveLink;
+                        targetAttr = 'target="_blank" rel="noopener noreferrer"';
+                    } else {
+                        // Internal link: agregar /live al final
+                        eventLink = event.link + 'live';
+                    }
+                    
+                    buttonHTML = `
+                        <a href="${eventLink}" ${targetAttr}
+                           class="inline-flex items-center justify-center w-full bg-red-600 text-white font-medium rounded-lg py-2.5 px-4 hover:bg-red-700 transition-colors">
+                            <i class="fas fa-circle mr-2 text-xs animate-pulse"></i>
+                            Ver en Vivo ${externalIcon}
+                        </a>
+                    `;
+                    break;
+                    
+                case 'finished':
+                    // Evento finalizado - sin badge
+                    badgeHTML = '';
+                    targetAttr = event.linkType === 'external' ? 'target="_blank" rel="noopener noreferrer"' : '';
+                    buttonHTML = `
+                        <a href="${event.link}" ${targetAttr}
+                           class="inline-flex items-center justify-center w-full bg-orange-400 text-white font-medium rounded-lg py-2.5 px-4 hover:bg-orange-500 transition-colors">
+                            Ver Resultados ${externalIcon}
+                        </a>
+                    `;
+                    break;
             }
 
             card.innerHTML = `
@@ -202,10 +258,10 @@
                             ${categoryNames[event.category]}
                         </span>
                     </div>
-                    ${!event.resultsAvailable ? '<div class="absolute top-4 right-4"><span class="bg-gray-800/80 text-white font-semibold rounded-full text-xs py-1.5 px-3"><i class="fas fa-clock mr-1"></i> Próximamente</span></div>' : ''}
+                    ${badgeHTML}
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                    <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors min-h-[3.5rem] flex items-start">
                         ${event.title}
                     </h3>
                     <div class="space-y-2 mb-4">

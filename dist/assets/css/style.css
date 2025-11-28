@@ -892,6 +892,9 @@ select{
 .h-full{
   height: 100%;
 }
+.min-h-\[3\.5rem\]{
+  min-height: 3.5rem;
+}
 .min-h-screen{
   min-height: 100vh;
 }
@@ -1414,6 +1417,9 @@ select{
 .text-5xl{
   font-size: 3rem;
   line-height: 1;
+}
+.text-\[0\.5rem\]{
+  font-size: 0.5rem;
 }
 .text-\[1\.2rem\]{
   font-size: 1.2rem;
@@ -1944,6 +1950,10 @@ header.dark.nav-sticky .navbar-nav .nav-link:is(.active, :active, :focus, :hover
 .hover\:bg-primary:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(248 102 36 / var(--tw-bg-opacity));
+}
+.hover\:bg-red-700:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
 }
 .hover\:text-gray-700:hover{
   --tw-text-opacity: 1;
