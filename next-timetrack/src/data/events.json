@@ -1,0 +1,81 @@
+[
+    {
+        "id": 1,
+        "title": "Stgo10K by Asics 2025",
+        "date": "2025-10-26",
+        "location": "Ñuñoa, Chile",
+        "category": "running",
+        "image": "/assets/images/events/KV-400x400px-100_V2.jpg",
+        "participants": 2000,
+        "linkType": "internal",
+        "link": "/results/stgo10k-by-asics",
+        "slug": "stgo10k-by-asics",
+        "resultsConfig": {
+            "type": "timingsense",
+            "competitionId": "68f8de49-a044-4b22-b1bc-4bdaac1f1473",
+            "event": "10K",
+            "containerId": "ranking-container-68f8de49-a044-4b22-b1bc-4bdaac1f1473-10K"
+        }
+    },
+    {
+        "id": 2,
+        "title": "Corriendo al Centenario Pucv 2025",
+        "date": "2025-11-09",
+        "location": "Valparaíso, Chile",
+        "category": "running",
+        "image": "/assets/images/events/logo_corriendo_al_centenario_440x440.jpg",
+        "participants": 1500,
+        "linkType": "internal",
+        "link": "/results/corriendo-al-centenario-pucv-2025",
+        "slug": "corriendo-al-centenario-pucv-2025",
+        "resultsConfig": {
+            "type": "sportmaniacs",
+            "scriptSrc": "https://sportmaniacs.com/embed/es/races/corriendo-al-centenario-pucv-2025.js"
+        }
+    },
+    {
+        "id": 3,
+        "title": "Ironman Pucón 2025",
+        "date": "2025-02-22",
+        "location": "Pucón, Chile",
+        "category": "triatlon",
+        "image": "/assets/images/events/ironman-pucon.jpg",
+        "participants": 1200,
+        "linkType": "external",
+        "link": "https://resultados.ironman.com/2025/pucon"
+    },
+    {
+        "id": 4,
+        "title": "Desafío del Desierto",
+        "date": "2025-05-10",
+        "location": "San Pedro de Atacama",
+        "category": "trail",
+        "image": "/assets/images/events/trail-atacama.jpg",
+        "participants": 800,
+        "linkType": "internal",
+        "link": "/results/trail-atacama-2025",
+        "slug": "trail-atacama-2025"
+    },
+    {
+        "id": 5,
+        "title": "Gran Fondo Valparaíso",
+        "date": "2025-03-20",
+        "location": "Valparaíso, Chile",
+        "category": "ciclismo",
+        "image": "/assets/images/events/ciclismo-valpo.jpg",
+        "participants": 2500,
+        "linkType": "external",
+        "link": "https://granfondo.cl/resultados"
+    },
+    {
+        "id": 6,
+        "title": "Challenge La Serena",
+        "date": "2025-01-28",
+        "location": "La Serena, Chile",
+        "category": "triatlon",
+        "image": "/assets/images/events/challenge-serena.jpg",
+        "participants": 900,
+        "linkType": "external",
+        "link": "https://challenge-family.com/results/laserena"
+    }
+]

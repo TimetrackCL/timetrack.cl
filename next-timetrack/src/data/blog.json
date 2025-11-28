@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "title": "Cronometraje de Carreras con Chip: ¿Cómo Funciona?",
+        "date": "01 Mar, 2025",
+        "category": "Tecnología",
+        "image": "/assets/images/blog/1-mini-photo-blog.jpg",
+        "excerpt": "El cronometraje con chip es un sistema basado en tecnología RFID que permite medir el tiempo exacto de cada corredor...",
+        "link": "/blog/como-funciona-cronometraje-chip"
+    },
+    {
+        "id": 2,
+        "title": "¿Cómo Elegir el Mejor Sistema de Cronometraje?",
+        "date": "01 Mar, 2025",
+        "category": "Tecnología",
+        "image": "/assets/images/blog/mini-photo-como-elegir-el-mejor-sistema-de-cronometraje-para-carreras.jpg",
+        "excerpt": "Para productoras de eventos deportivos, elegir el sistema de cronometraje adecuado es una decisión estratégica...",
+        "link": "/blog/como-elegir-el-mejor-sistema-de-cronometraje-para-carreras"
+    },
+    {
+        "id": 3,
+        "title": "Tiempo Chip vs. Tiempo Gunshot: ¿Cuál es la Diferencia?",
+        "date": "01 Mar, 2025",
+        "category": "Tecnología",
+        "image": "/assets/images/blog/mini-photo-tiempo-chip-vs-tiempo-disparo.jpg",
+        "excerpt": "Descubre la diferencia entre el tiempo chip y el tiempo gunshot, cuál es más preciso y cuál se utiliza en competencias oficiales...",
+        "link": "/blog/tiempo-chip-vs-tiempo-disparo"
+    }
+]

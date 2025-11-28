@@ -922,6 +922,9 @@ select{
 .w-full{
   width: 100%;
 }
+.min-w-full{
+  min-width: 100%;
+}
 .max-w-2xl{
   max-width: 42rem;
 }
@@ -930,6 +933,9 @@ select{
 }
 .max-w-md{
   max-width: 28rem;
+}
+.flex-1{
+  flex: 1 1 0%;
 }
 .flex-shrink-0{
   flex-shrink: 0;
@@ -1035,6 +1041,11 @@ select{
   -moz-column-gap: 0.75rem;
        column-gap: 0.75rem;
 }
+.space-x-2 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
 .space-x-4 > :not([hidden]) ~ :not([hidden]){
   --tw-space-x-reverse: 0;
   margin-right: calc(1rem * var(--tw-space-x-reverse));
@@ -1086,6 +1097,9 @@ select{
 .overflow-x-hidden{
   overflow-x: hidden;
 }
+.whitespace-nowrap{
+  white-space: nowrap;
+}
 .rounded{
   border-radius: 0.25rem;
 }
@@ -1107,6 +1121,9 @@ select{
 .border-b{
   border-bottom-width: 1px;
 }
+.border-b-2{
+  border-bottom-width: 2px;
+}
 .border-s{
   border-inline-start-width: 1px;
 }
@@ -1118,9 +1135,16 @@ select{
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
+.border-orange-500{
+  --tw-border-opacity: 1;
+  border-color: rgb(249 115 22 / var(--tw-border-opacity));
+}
 .border-primary{
   --tw-border-opacity: 1;
   border-color: rgb(248 102 36 / var(--tw-border-opacity));
+}
+.border-transparent{
+  border-color: transparent;
 }
 .bg-black{
   --tw-bg-opacity: 1;
@@ -1308,6 +1332,10 @@ select{
 .py-24{
   padding-top: 6rem;
   padding-bottom: 6rem;
+}
+.py-3{
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 .py-44{
   padding-top: 11rem;
@@ -1917,6 +1945,10 @@ header.dark.nav-sticky .navbar-nav .nav-link:is(.active, :active, :focus, :hover
   --tw-bg-opacity: 1;
   background-color: rgb(248 102 36 / var(--tw-bg-opacity));
 }
+.hover\:text-gray-700:hover{
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+}
 .hover\:text-primary:hover{
   --tw-text-opacity: 1;
   color: rgb(248 102 36 / var(--tw-text-opacity));
@@ -2028,8 +2060,20 @@ header.dark.nav-sticky .navbar-nav .nav-link:is(.active, :active, :focus, :hover
   .md\:col-span-2{
     grid-column: span 2 / span 2;
   }
+  .md\:inline{
+    display: inline;
+  }
+  .md\:hidden{
+    display: none;
+  }
+  .md\:h-16{
+    height: 4rem;
+  }
   .md\:w-1\/2{
     width: 50%;
+  }
+  .md\:flex-none{
+    flex: none;
   }
   .md\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2043,17 +2087,62 @@ header.dark.nav-sticky .navbar-nav .nav-link:is(.active, :active, :focus, :hover
   .md\:flex-nowrap{
     flex-wrap: nowrap;
   }
+  .md\:items-center{
+    align-items: center;
+  }
+  .md\:justify-between{
+    justify-content: space-between;
+  }
+  .md\:gap-3{
+    gap: 0.75rem;
+  }
+  .md\:space-x-8 > :not([hidden]) ~ :not([hidden]){
+    --tw-space-x-reverse: 0;
+    margin-right: calc(2rem * var(--tw-space-x-reverse));
+    margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+  .md\:px-1{
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+  .md\:px-3{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  .md\:py-1{
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+  .md\:py-1\.5{
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+  }
+  .md\:py-4{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
   .md\:py-80{
     padding-top: 20rem;
     padding-bottom: 20rem;
+  }
+  .md\:text-right{
+    text-align: right;
   }
   .md\:text-3xl{
     font-size: 1.875rem;
     line-height: 2.25rem;
   }
+  .md\:text-4xl{
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
   .md\:text-5xl\/tight{
     font-size: 3rem;
     line-height: 1.25;
+  }
+  .md\:text-sm{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
   .md\:text-xl{
     font-size: 1.25rem;

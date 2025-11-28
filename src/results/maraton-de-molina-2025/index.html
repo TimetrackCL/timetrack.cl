@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    @@include("../../partials/title-meta.html", {
+        "title": "Resultados Maratón de Molina 2025 | Timetrack", 
+        "description": "Resultados oficiales del Maratón de Molina 2025. Consulta posiciones, tiempos y clasificaciones.",
+        "canonical": "https://timetrack.cl/results/maraton-de-molina-2025"
+    })
+
+    @@include('../../partials/head-css.html')
+    
+    <!-- Control de caché para resultados en tiempo real -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0, s-maxage=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+</head>
+
+<body class="text-gray-700">
+
+    @@include('../../partials/navbar.html', {"link-color": "dark", "header-class": "nav-sticky"})
+
+    <!-- Breadcrumbs -->
+    <section class="pt-20">
+        <div class="container">
+            <div class="py-14">
+                <div class="flex flex-wrap items-center gap-2 bg-gray-100 py-2 px-3">
+                    <a href="/" class="transition-all hover:text-primary">Home</a> /
+                    <a href="/results/" class="transition-all hover:text-primary">Resultados</a> /
+                    <p class="text-gray-500">Maratón de Molina 2025</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <section class="pb-20">
+        <div class="container">
+            
+            
+            
+        </div>
+    </section>
+
+    @@include('../../partials/footer.html')
+    @@include('../../partials/back-to-top.html')
+    @@include('../../partials/footer-scripts.html')
+
+</body>
+
+</html>
