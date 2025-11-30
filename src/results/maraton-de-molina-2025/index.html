@@ -37,7 +37,101 @@
     <section class="pb-20">
         <div class="container">
             
-            
+            <style>
+    
+
+                :root {
+                    --primary-color: #1D67FF;
+                    --split-selected-color: var(--primary-color);
+                    --light-background: #f3f3f3;
+                    --dark-background: #888;
+                    --web-background: #fff;
+                    --font-size: 12px;
+                    --icon-size: 30px;
+                    --navigation-padding: 20px;
+                    --detail-item-font-size: 20px;
+                    --detail-item-title-font-size: 16px;
+                    --detail-subtitle-font-size: 14px;
+                    --detail-table-font-size: 14px;
+                }
+        
+                .ts-rankings-events-links {
+                    display: flex;
+                    gap: 2px;
+                    flex-wrap: wrap;
+                    margin-bottom: 20px;
+                    align-items: center;
+                    justify-content: center;
+                }
+        
+                .ts-rankings-event-button {
+                    display: block;
+                    background-color: var(--light-background);
+                    color: var(--dark-background);
+                    padding: 10px 20px;
+                    margin: 5px;
+                    border-radius: 5px;
+                    text-decoration: none;
+                    font-size: 14px;
+                    cursor: pointer;
+                }
+        
+                .ts-rankings-event-button.selected {
+                    background-color: var(--primary-color);
+                    color: var(--web-background);
+                }
+        
+        </style>
+        
+        <script>
+            function onEventButtonClick(event) {
+                document.querySelectorAll(".ts-rankings-event-button.selected").forEach(element => element.classList.remove("selected"));
+                this.classList.add("selected");
+                window.tsRankings.plugin(Object.assign(window.tsRankingCompetitionBase, {event: decodeURI(this.dataset.eventname)}))
+            }
+        </script>
+        
+        <div class="ts-rankings-events-links">
+                <a class="ts-rankings-event-button" onclick="onEventButtonClick.call(this, event)" data-eventName="42K" href='javascript:void(0)'>42K</a>
+            <a class="ts-rankings-event-button" onclick="onEventButtonClick.call(this, event)" data-eventName="21K" href='javascript:void(0)'>21K</a>
+            <a class="ts-rankings-event-button" onclick="onEventButtonClick.call(this, event)" data-eventName="7K" href='javascript:void(0)'>7K</a>
+        </div>
+        
+        <div id="ranking-container-692994fa-1058-4a3d-8136-4898ac1f08c3"></div>
+        <script>
+            window.tsRankingCompetitionBase = {
+                config: { api: "https://rankings-api.timingsense.cloud/api/competition" },
+                container: document.getElementById("ranking-container-692994fa-1058-4a3d-8136-4898ac1f08c3"),
+                competitionId: "692994fa-1058-4a3d-8136-4898ac1f08c3",
+                event: decodeURI(""),
+                withSummary: true,
+                defaultTab: "ranking",
+                translations: {
+                    en: {
+                        tableHeaders: {
+                            pos: "Position",
+                            dorsal: "BiB",
+                            name: "Name",
+                            surname: "Surname",
+                            club: "Club",
+                            time: "Time",
+                            status: "Status",
+                        },
+                        fieldValues: {
+                            status: {
+                                finished: "Finished",
+                                retired: "Withdrawn"
+                            }
+                        }
+                    }
+                }
+            }
+        </script>
+        <script type="text/javascript" 
+                onload='document.querySelector("[data-eventName=\"42K\"]").click();'
+                src="https://development.timingsense.cloud/ts-rankings/main.js" 
+        >
+        </script>
             
         </div>
     </section>
