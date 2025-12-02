@@ -68,6 +68,36 @@ header {
         }
     }
 
+    // Estilo específico para páginas de resultados
+    &.results-page {
+        @apply bg-white shadow;
+
+        // Forzar fondo blanco en todas las pantallas
+        @screen lg {
+            @apply bg-white;
+            
+            .logo-light {
+                @apply hidden;
+            }
+
+            .logo-dark {
+                @apply block;
+            }
+        }
+
+        .navbar-nav {
+            .nav-item {
+                .nav-link {
+                    @apply text-gray-800;
+
+                    &:is(.active, :active, :focus, :hover) {
+                        @apply text-primary;
+                    }
+                }
+            }
+        }
+    }
+
     // Comportamiento normal para otras páginas
     &:not(.technology-page) {
         &.nav-sticky {
@@ -161,4 +191,3 @@ header {
         }
     }
 }
-

@@ -1788,6 +1788,33 @@ header.technology-page .navbar-nav .nav-item .nav-link:is(.active, :active, :foc
     display: block;
   }
 }
+header.results-page{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+@media (min-width: 1024px) {
+  header.results-page{
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  }
+  header.results-page .logo-light{
+    display: none;
+  }
+  header.results-page .logo-dark{
+    display: block;
+  }
+}
+header.results-page .navbar-nav .nav-item .nav-link{
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+header.results-page .navbar-nav .nav-item .nav-link:is(.active, :active, :focus, :hover){
+  --tw-text-opacity: 1;
+  color: rgb(248 102 36 / var(--tw-text-opacity));
+}
 header:not(.technology-page).nav-sticky{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
