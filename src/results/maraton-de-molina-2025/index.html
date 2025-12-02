@@ -36,12 +36,16 @@
     <!-- Contenido Principal -->
     <section class="pb-20">
         <div class="container-fluid">
-            <style>
-                .sm-ranking-search-container {
-                    background-color: #bfbfbf;
-                }
-            </style>
-            <script type='text/javascript' src='https://sportmaniacs.com/embed/es/races/maraton-de-molina-2025.js'></script>
+            <div id="sportmaniacs-container"></div>
+            
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const container = document.getElementById('sportmaniacs-container');
+                    if (container) {
+                        container.innerHTML = '<script type="text/javascript" src="https://sportmaniacs.com/embed/es/races/maraton-de-molina-2025.js"></script>';
+                    }
+                });
+            </script>
             
         </div>
     </section>
