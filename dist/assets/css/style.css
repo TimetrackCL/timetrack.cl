@@ -968,6 +968,14 @@ select{
 .animate-pulse{
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
+@keyframes spin{
+  to{
+    transform: rotate(360deg);
+  }
+}
+.animate-spin{
+  animation: spin 1s linear infinite;
+}
 .cursor-not-allowed{
   cursor: not-allowed;
 }
@@ -1121,6 +1129,9 @@ select{
 .border{
   border-width: 1px;
 }
+.border-4{
+  border-width: 4px;
+}
 .border-b{
   border-bottom-width: 1px;
 }
@@ -1148,6 +1159,10 @@ select{
 }
 .border-transparent{
   border-color: transparent;
+}
+.border-t-primary{
+  --tw-border-opacity: 1;
+  border-top-color: rgb(248 102 36 / var(--tw-border-opacity));
 }
 .bg-black{
   --tw-bg-opacity: 1;

@@ -175,7 +175,16 @@
             </div>
 
             <!-- Contenedor de Resultados TimingSense -->
-            <div id="ranking-container-692994fa-1058-4a3d-8136-4898ac1f08c3-7K"></div>
+            <div id="ranking-container-692994fa-1058-4a3d-8136-4898ac1f08c3-7K">
+                <!-- Loader -->
+                <div id="results-loader" class="flex flex-col items-center justify-center py-20">
+                    <div class="relative">
+                        <div class="w-20 h-20 border-4 border-gray-200 border-t-primary rounded-full animate-spin"></div>
+                    </div>
+                    <p class="mt-6 text-lg text-gray-600 font-medium">Cargando resultados...</p>
+                    <p class="mt-2 text-sm text-gray-500">Por favor espera un momento</p>
+                </div>
+            </div>
             
         </div>
     </section>
@@ -274,6 +283,42 @@
                 event: decodeURI("7K"),
             });'
             src="https://development.timingsense.cloud/ts-rankings/main.js">
+    </script>
+    
+    <!-- Script para ocultar el loader cuando cargue el contenido -->
+    <script>
+        // Observar cambios en el contenedor para detectar cuando se carga el contenido
+        const container = document.getElementById('ranking-container-692994fa-1058-4a3d-8136-4898ac1f08c3-7K');
+        const loader = document.getElementById('results-loader');
+        
+        // Configurar el observer para detectar cuando se agregue contenido
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                // Si se agregaron nodos al contenedor (además del loader)
+                if (mutation.addedNodes.length > 0) {
+                    const hasContent = Array.from(container.children).some(child => 
+                        child.id !== 'results-loader' && child.innerHTML.trim() !== ''
+                    );
+                    
+                    if (hasContent && loader) {
+                        loader.style.display = 'none';
+                    }
+                }
+            });
+        });
+        
+        // Comenzar a observar el contenedor
+        observer.observe(container, { 
+            childList: true, 
+            subtree: true 
+        });
+        
+        // Fallback: ocultar el loader después de 10 segundos si no se detecta contenido
+        setTimeout(() => {
+            if (loader && loader.style.display !== 'none') {
+                loader.style.display = 'none';
+            }
+        }, 10000);
     </script>
 
 </body>
