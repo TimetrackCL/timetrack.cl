@@ -4,9 +4,11 @@
 
 1. Asegúrate de tener [Node.js](https://nodejs.org/) instalado en tu máquina.
 2. Clona este repositorio.
-3. Navega a la carpeta del proyecto y ejecuta `npm install` para instalar las dependencias, incluyendo Gulp.
-4. Luego, ejecuta el comando `gulp` para levantar el ambiente de desarrollo.
+3. Navega a la carpeta del proyecto y ejecuta `npm install` para instalar las dependencias.
+4. Para iniciar el entorno de desarrollo con Next.js usa `npm run dev`.
 
-## Descripción del Gulpfile.js
+## Migración a Next.js
 
-El archivo `gulpfile.js` contiene varias tareas automatizadas para ayudar en el desarrollo del proyecto, incluyendo la compilación de archivos SCSS, minimización de JavaScript, optimización de imágenes, y un servidor de desarrollo con recarga en vivo.
+Esta versión incluye una configuración de [Next.js](https://nextjs.org/) que genera las páginas del sitio a partir de los archivos HTML ya existentes en `dist/`. Todo el contenido está disponible en la carpeta `pages` y los recursos estáticos en `public/assets`.
+
+El antiguo `gulpfile.js` permanece para referencia de las tareas de compilación previas.
