@@ -281,6 +281,19 @@
         // - "finished": Evento finalizado - Sin badge, botón naranja que redirige al link principal
         const eventsData = [
         {
+                id: 4,
+                title: "Maratón del Mataquito 2025",
+                date: "2025-12-21",
+                location: "Mataquito, Chile",
+                category: "running",
+                image: "/assets/images/events/imagen-mataquito-440x440.jpg",
+                participants: 800,
+                linkType: "internal", // "internal" o "external"
+                link: "/results/maraton-del-mataquito-2025/",
+                status: "upcoming", // "upcoming" | "live" | "finished"
+                liveLink: null // Solo si linkType es "external" y status es "live"
+            },
+        {
                 id: 3,
                 title: "Maratón de Molina 2025",
                 date: "2025-11-30",
