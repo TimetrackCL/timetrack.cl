@@ -94,6 +94,42 @@
             border-color: #d1d5db;
             color: #374151;
         }
+        
+        /* Preloader styles */
+        .preloader-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            min-height: 400px;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #f3f4f6;
+            border-top: 4px solid #f97316;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .preloader-text {
+            margin-top: 1.5rem;
+            color: #6b7280;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        
+        /* Ocultar preloader cuando el contenido está cargado */
+        .content-loaded .preloader-container {
+            display: none !important;
+        }
     </style>
 </head>
 
@@ -151,6 +187,11 @@
                 <div class="tab-content px-4">
                     <!-- Tab 42K -->
                     <div id="tab-content-42K" class="tab-panel" role="tabpanel">
+                        <!-- Preloader para 42K -->
+                        <div class="preloader-container">
+                            <div class="spinner"></div>
+                            <p class="preloader-text">Cargando resultados...</p>
+                        </div>
                         <div id="ranking-container-69473ba4-6dd0-4249-9f9d-4938ac1f2b7c-42K"></div>
                         <script type="text/javascript" 
                                 onload='window.tsRankings.plugin({
@@ -171,6 +212,11 @@
 
                     <!-- Tab 21K -->
                     <div id="tab-content-21K" class="tab-panel hidden" role="tabpanel">
+                        <!-- Preloader para 21K -->
+                        <div class="preloader-container">
+                            <div class="spinner"></div>
+                            <p class="preloader-text">Cargando resultados...</p>
+                        </div>
                         <div id="ranking-container-69473ba4-6dd0-4249-9f9d-4938ac1f2b7c-21K"></div>
                         <script type="text/javascript" 
                                 onload='window.tsRankings.plugin({
@@ -191,6 +237,11 @@
 
                     <!-- Tab 11K -->
                     <div id="tab-content-11K" class="tab-panel hidden" role="tabpanel">
+                        <!-- Preloader para 11K -->
+                        <div class="preloader-container">
+                            <div class="spinner"></div>
+                            <p class="preloader-text">Cargando resultados...</p>
+                        </div>
                         <div id="ranking-container-69473ba4-6dd0-4249-9f9d-4938ac1f2b7c-11K"></div>
                         <script type="text/javascript" 
                                 onload='window.tsRankings.plugin({
@@ -297,12 +348,50 @@
     <!-- chatbots -->
     <!-- <script src="https://aurora.safeware.cl/integration/15af0a50-e884-445a-976c-1344c0d09470/aurora-chat-plugin.js"></script> -->
 
-    <!-- Script para manejo de tabs -->
+    <!-- Script para manejo de tabs y detección de carga de contenido -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const tabButtons = document.querySelectorAll('.tab-button');
             const tabPanels = document.querySelectorAll('.tab-panel');
             
+            // Función para ocultar preloader cuando el contenido se carga
+            function hidePreloaderWhenLoaded(tabId) {
+                const container = document.getElementById('ranking-container-69473ba4-6dd0-4249-9f9d-4938ac1f2b7c-' + tabId);
+                const tabPanel = document.getElementById('tab-content-' + tabId);
+                
+                if (!container || !tabPanel) return;
+                
+                // Observar cambios en el contenedor
+                const observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                        // Si se agregó contenido al contenedor
+                        if (mutation.addedNodes.length > 0) {
+                            // Agregar clase para ocultar preloader
+                            tabPanel.classList.add('content-loaded');
+                            observer.disconnect();
+                        }
+                    });
+                });
+                
+                // Configurar el observer
+                observer.observe(container, {
+                    childList: true,
+                    subtree: true
+                });
+                
+                // Timeout de seguridad: ocultar preloader después de 10 segundos aunque no se detecte contenido
+                setTimeout(function() {
+                    tabPanel.classList.add('content-loaded');
+                    observer.disconnect();
+                }, 10000);
+            }
+            
+            // Inicializar observadores para cada tab
+            ['42K', '21K', '11K'].forEach(function(tabId) {
+                hidePreloaderWhenLoaded(tabId);
+            });
+            
+            // Manejo de clicks en tabs
             tabButtons.forEach(button => {
                 button.addEventListener('click', function() {
                     const targetTab = this.getAttribute('data-tab');
