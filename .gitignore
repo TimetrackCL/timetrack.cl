@@ -1,2 +1,8 @@
 # Ignorar la carpeta node_modules
 node_modules/
+
+# Ignorar carpeta next-timetrack
+next-timetrack/
+
+# Ignorar carpeta webpage-nextjs
+webpage-nextjs/
