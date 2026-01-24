@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>Media Maratón Ruta de los Ulmos 2026 Live | Timetrack</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Media Maratón Ruta de los Ulmos 2026 Live. Consulta posiciones, tiempos y clasificaciones en vivo.">
+    <link rel="canonical" href="https://timetrack.cl/results/media-maraton-ruta-de-los-ulmos-2026/live" />
+
+    <!-- Theme favicon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+    <!--Swiper slider css-->
+    <link href="/assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Animation on Scroll css -->
+    <link href="/assets/libs/aos/aos.css" rel="stylesheet" type="text/css">
+
+    <!-- Style css -->
+    <link href="/assets/css/style.min.css?v=1.0.0" rel="stylesheet" type="text/css">
+
+    <!-- Icons css -->
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css">
+    
+    <!-- Control de caché para resultados en tiempo real -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0, s-maxage=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <style>
+        .title-custom {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            color: #32383E;
+            letter-spacing: -0.02em;
+        }
+        
+        .subtitle-custom {
+            color: #636b74;
+        }
+        
+        /* Proteger los botones de MUI del reset de Tailwind */
+        [id^="live-widget-"] button.MuiButton-root,
+        [id^="live-widget-"] .MuiButton-root {
+            -webkit-appearance: revert !important;
+            appearance: revert !important;
+        }
+        
+        /* Asegurar que los botones primarios de MUI mantengan sus estilos */
+        [id^="live-widget-"] button.MuiButton-root.MuiButton-colorPrimary,
+        [id^="live-widget-"] .MuiButton-root.MuiButton-colorPrimary,
+        [id^="live-widget-"] .MuiButton-colorPrimary.MuiButton-variantSolid {
+            background-color: #f97316 !important;
+            background-image: none !important;
+        }
+        
+        [id^="live-widget-"] .MuiButton-colorPrimary:hover {
+            background-color: #ea580c !important;
+        }
+        
+        /* Restaurar estilos para otros botones de MUI */
+        [id^="live-widget-"] .MuiButton-root:not(.MuiButton-colorPrimary) {
+            background-color: revert !important;
+            background-image: revert !important;
+        }
+        
+        /* Estilos para scroll de tabs en mobile */
+        .overflow-x-auto {
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+        }
+        
+        .overflow-x-auto::-webkit-scrollbar {
+            display: none; /* Chrome, Safari and Opera */
+        }
+        
+        /* Indicador visual de scroll horizontal */
+        .tab-nav-wrapper {
+            position: relative;
+        }
+        
+        .tab-nav-wrapper::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 30px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+            pointer-events: none;
+            opacity: 1;
+            transition: opacity 0.3s;
+        }
+        
+        .tab-nav-wrapper.scrolled-end::after {
+            opacity: 0;
+        }
+        
+        /* Sticky tabs durante scroll - debajo del header */
+        .sticky-tabs {
+            position: sticky;
+            z-index: 30;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Mobile: tabs sticky debajo del header */
+        @media (max-width: 768px) {
+            .sticky-tabs {
+                top: 77px; /* altura aproximada del header mobile */
+            }
+        }
+        
+        /* Desktop: tabs sticky debajo del header */
+        @media (min-width: 768px) {
+            .sticky-tabs {
+                top: 100px; /* altura aproximada del header desktop */
+            }
+        }
+        
+        /* Estilos para tabs activos e inactivos */
+        .tab-button.border-orange-500 {
+            border-color: #f97316;
+            color: #ea580c;
+        }
+        
+        .tab-button.border-orange-500:hover {
+            border-color: #f97316;
+            color: #ea580c;
+        }
+        
+        /* Hover solo para tabs inactivos */
+        .tab-button.border-transparent:hover {
+            border-color: #d1d5db;
+            color: #374151;
+        }
+        
+        /* Feedback táctil para mobile */
+        .tab-button:active {
+            transform: scale(0.97);
+            transition: transform 0.1s;
+        }
+        
+        /* Área táctil mínima para mobile (44px+) */
+        @media (max-width: 768px) {
+            .tab-button {
+                min-height: 44px;
+                padding-top: 0.875rem; /* 14px */
+                padding-bottom: 0.875rem; /* 14px */
+            }
+        }
+        
+        /* Preloader styles */
+        .preloader-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem; /* Reducido para mobile */
+            min-height: 200px; /* Reducido de 400px a 200px */
+        }
+        
+        @media (min-width: 768px) {
+            .preloader-container {
+                padding: 4rem 2rem;
+                min-height: 400px;
+            }
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #f3f4f6;
+            border-top: 4px solid #f97316;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .preloader-text {
+            margin-top: 1.5rem;
+            color: #6b7280;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        
+        /* Ocultar preloader cuando el contenido está cargado */
+        .content-loaded .preloader-container {
+            display: none !important;
+        }
+        
+        /* Animación LIVE optimizada - menos intensiva */
+        @keyframes pulse-subtle {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+        
+        .animate-pulse-subtle {
+            animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        /* Header Sticky Inteligente */
+        #live-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: white;
+            border-top: 3px solid #f97316;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease-in-out;
+        }
+        
+        /* Estado compacto del header al hacer scroll (solo mobile) */
+        @media (max-width: 768px) {
+            #live-header.compact {
+                border-top-width: 2px;
+                box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+            }
+            
+            #live-header.compact .header-content {
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+            }
+            
+            #live-header.compact .logo-img {
+                height: 1.75rem;
+                width: 1.75rem;
+            }
+            
+            #live-header.compact .event-title {
+                font-size: 0.875rem;
+            }
+            
+            #live-header.compact .event-meta {
+                display: none;
+            }
+        }
+        
+        /* Badge LIVE mejorado con punto animado */
+        @keyframes ping {
+            75%, 100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+        
+        .live-badge-dot {
+            position: relative;
+            display: inline-flex;
+            height: 0.375rem;
+            width: 0.375rem;
+        }
+        
+        .live-badge-dot-ping {
+            position: absolute;
+            display: inline-flex;
+            height: 100%;
+            width: 100%;
+            border-radius: 9999px;
+            background-color: #fb923c;
+            opacity: 0.75;
+            animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+        
+        .live-badge-dot-solid {
+            position: relative;
+            display: inline-flex;
+            border-radius: 9999px;
+            height: 0.375rem;
+            width: 0.375rem;
+            background-color: #f97316;
+        }
+    </style>
+</head>
+
+<body class="text-gray-700">
+    
+    <!-- Header Sticky Inteligente -->
+    <header id="live-header">
+        <!-- Header para Mobile -->
+        <div class="md:hidden header-content px-4 py-3">
+            <div class="flex items-start gap-3">
+                <img src="/assets/images/timetrack-logo-sm.png" alt="Timetrack" class="logo-img h-10 w-10 flex-shrink-0">
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-center gap-2 mb-0.5">
+                        <span class="text-[10px] font-semibold text-gray-600 uppercase tracking-wider">Timetrack</span>
+                        <!-- Badge LIVE mejorado -->
+                        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-orange-50 text-orange-700 ring-1 ring-inset ring-orange-600/30">
+                            <span class="live-badge-dot">
+                                <span class="live-badge-dot-ping"></span>
+                                <span class="live-badge-dot-solid"></span>
+                            </span>
+                            EN VIVO
+                        </span>
+                    </div>
+                    <h1 class="event-title text-base font-bold text-gray-900 leading-tight mb-1">
+                        Media Maratón Ruta de los Ulmos 2026
+                    </h1>
+                    <p class="event-meta text-xs text-gray-600 flex items-center gap-2">
+                        <span>Domingo 25 Enero 2026</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Header para Desktop -->
+        <div class="hidden md:block px-6 py-4">
+            <div class="flex items-center justify-between max-w-7xl mx-auto">
+                <img src="/assets/images/logo-timetrack-v2.png" alt="Timetrack Logo" class="h-16 w-auto">
+                <div class="text-right">
+                    <div class="flex items-center justify-end gap-3 mb-1">
+                        <h1 class="text-3xl font-bold text-gray-900">
+                            Media Maratón Ruta de los Ulmos 2026
+                        </h1>
+                        <!-- Badge LIVE mejorado desktop -->
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-orange-50 text-orange-700 ring-1 ring-inset ring-orange-600/30">
+                            <span class="live-badge-dot">
+                                <span class="live-badge-dot-ping"></span>
+                                <span class="live-badge-dot-solid"></span>
+                            </span>
+                            EN VIVO
+                        </span>
+                    </div>
+                    <p class="text-sm text-gray-600">Domingo 25 Enero 2026 • Los Ríos, Chile</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    
+    <!-- Contenido Principal -->
+    <section class="pb-20">
+        <div class="container-fluid px-0">
+            <!-- Sistema de Tabs para diferentes distancias -->
+            <div class="sticky-tabs">
+                <!-- Navegación de Tabs -->
+                <div class="border-b border-gray-200 mb-4 md:mb-6 overflow-x-auto tab-nav-wrapper">
+                    <nav class="flex space-x-4 md:space-x-8 px-4" role="tablist">
+                        <button class="tab-button py-3 md:py-4 px-4 md:px-1 border-b-2 font-medium text-sm md:text-sm whitespace-nowrap transition-colors duration-200 border-orange-500 text-orange-600" 
+                                data-tab="21K"
+                                role="tab"
+                                aria-selected="true">
+                            <span class="hidden md:inline">21K - Media Maratón</span>
+                            <span class="md:hidden">21K</span>
+                        </button>
+                        <button class="tab-button py-3 md:py-4 px-4 md:px-1 border-b-2 font-medium text-sm md:text-sm whitespace-nowrap transition-colors duration-200 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" 
+                                data-tab="10K"
+                                role="tab"
+                                aria-selected="false">
+                            <span class="hidden md:inline">10K</span>
+                            <span class="md:hidden">10K</span>
+                        </button>
+                        <button class="tab-button py-3 md:py-4 px-4 md:px-1 border-b-2 font-medium text-sm md:text-sm whitespace-nowrap transition-colors duration-200 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" 
+                                data-tab="5K"
+                                role="tab"
+                                aria-selected="false">
+                            <span class="hidden md:inline">5K</span>
+                            <span class="md:hidden">5K</span>
+                        </button>
+                        <button class="tab-button py-3 md:py-4 px-4 md:px-1 border-b-2 font-medium text-sm md:text-sm whitespace-nowrap transition-colors duration-200 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" 
+                                data-tab="15K"
+                                role="tab"
+                                aria-selected="false">
+                            <span class="hidden md:inline">1.5K</span>
+                            <span class="md:hidden">1.5K</span>
+                        </button>
+                    </nav>
+                </div>
+            </div>
+
+                <!-- Contenido de los Tabs -->
+                <div class="tab-content px-4">
+                    <!-- Tab 21K -->
+                    <div id="tab-content-21K" class="tab-panel" role="tabpanel">
+                        <!-- Preloader para 21K -->
+                        <div class="preloader-container">
+                            <div class="spinner"></div>
+                            <p class="preloader-text">Cargando resultados...</p>
+                        </div>
+                        <div id="ranking-container-697372ed-82d8-4f5d-b40c-4ff5ac1f1c48-21K"></div>
+                    </div>
+
+                    <!-- Tab 10K -->
+                    <div id="tab-content-10K" class="tab-panel hidden" role="tabpanel">
+                        <!-- Preloader para 10K -->
+                        <div class="preloader-container">
+                            <div class="spinner"></div>
+                            <p class="preloader-text">Cargando resultados...</p>
+                        </div>
+                        <div id="ranking-container-697372ed-82d8-4f5d-b40c-4ff5ac1f1c48-10K"></div>
+                    </div>
+
+                    <!-- Tab 5K -->
+                    <div id="tab-content-5K" class="tab-panel hidden" role="tabpanel">
+                        <!-- Preloader para 5K -->
+                        <div class="preloader-container">
+                            <div class="spinner"></div>
+                            <p class="preloader-text">Cargando resultados...</p>
+                        </div>
+                        <div id="ranking-container-697372ed-82d8-4f5d-b40c-4ff5ac1f1c48-5K"></div>
+                    </div>
+
+                    <!-- Tab 1.5K -->
+                    <div id="tab-content-15K" class="tab-panel hidden" role="tabpanel">
+                        <!-- Preloader para 1.5K -->
+                        <div class="preloader-container">
+                            <div class="spinner"></div>
+                            <p class="preloader-text">Cargando resultados...</p>
+                        </div>
+                        <div id="ranking-container-697372ed-82d8-4f5d-b40c-4ff5ac1f1c48-15K"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+        <!-- =========== footer Section Start =========== -->
+        <footer class="bg-gray-100">
+            <div class="py-6">
+                <!-- <div class="container">
+                    <div class="grid lg:grid-cols-2 items-center">
+                        <div>
+                            <h1 class="text-2xl font-medium mt-3 mb-2">¿Necesitas ayuda?</h1>
+                            <p class="text-slate-400">Escríbenos ahora y ayudaremos a hacer de tu carrera un evento cronometrado con la mejor experiencia para el competidor.</p>
+                        </div>
+                        <div class="flex flex-wrap items-center justify-start lg:justify-end gap-7 mt-5 lg:mt-0">
+                            <button class="flex items-center">
+                                <a href="#" class="bg-primary text-white rounded-full hover:shadow-lg hover:shadow-primary/30 focus:shadow-none focus:outline focus:outline-primary/40 transition-all duration-500 py-2 px-4">Hable con nosotros</a>
+                            </button>
+
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="border-b"></div>
+
+            <div class="container">
+
+                <div class="border-b"></div>
+
+                <div class="grid sm:grid-cols-2 text-center sm:text-start gap-6 py-5">
+                    <div>
+                        <p class=" text-sm text-slate-500">
+                            © 2025 Timetrack SpA. Todos los derechos reservados.
+                        </p>
+                    </div>
+
+                    <div class="flex justify-center sm:justify-end gap-7">
+                        <div>
+                            <a href="https://facebook.com/timetrackcl" blank="_blank"  aria-label="Visita  Facebook de Timetrack">
+                                <svg class="w-5 h-5 text-slate-500/90 hover:text-primary transition-all" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://twitter.com/timetrackcl" blank="_blank"  aria-label="Visita Twitter de Timetrack">
+                                <svg class="w-5 h-5 text-slate-500/90 hover:text-primary transition-all" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://linkedin.com/company/timetrackcl" blank="_blank" aria-label="Visita linkedin de Timetrack">
+                                <svg class="w-5 h-5 text-slate-500/90 hover:text-primary transition-all" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+        <!-- =========== footer Section end =========== -->
+
+    <!-- =========== Back To Top Start =========== -->
+    <button data-toggle="back-to-top" class="fixed text-sm rounded-full z-10 bottom-5 end-5 h-9 w-9 text-center bg-primary/20 text-primary flex justify-center items-center" aria-label="Back to Top">
+        <i class="fa-solid fa-arrow-up text-base"></i>
+    </button>
+    <!-- =========== Back To Top End =========== -->
+    <!-- Frost Plugin Js -->
+    <script src="/assets/libs/@frostui/tailwindcss/frostui.js"></script>
+
+    <!-- Swiper Plugin Js -->
+    <script src="/assets/libs/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Animation on Scroll Plugin Js -->
+    <script src="/assets/libs/aos/aos.js"></script>
+
+    <!-- Theme Js -->
+    <script src="/assets/js/theme.min.js"></script>
+
+    <!-- chatbots -->
+    <!-- <script src="https://aurora.safeware.cl/integration/15af0a50-e884-445a-976c-1344c0d09470/aurora-chat-plugin.js"></script> -->
+
+    <!-- Script para manejo de tabs y detección de carga de contenido -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabPanels = document.querySelectorAll('.tab-panel');
+            const tabNavWrapper = document.querySelector('.tab-nav-wrapper');
+            const tabNav = tabNavWrapper.querySelector('nav');
+            const liveHeader = document.getElementById('live-header');
+            let lastScroll = 0;
+            
+            // Header sticky inteligente (solo mobile)
+            function handleHeaderScroll() {
+                if (window.innerWidth >= 768) return; // Solo en mobile
+                
+                const currentScroll = window.pageYOffset;
+                
+                if (currentScroll > 50) {
+                    liveHeader.classList.add('compact');
+                } else {
+                    liveHeader.classList.remove('compact');
+                }
+                
+                lastScroll = currentScroll;
+            }
+            
+            // Escuchar scroll para header compacto
+            window.addEventListener('scroll', handleHeaderScroll);
+            window.addEventListener('resize', handleHeaderScroll);
+            
+            // Configuración de widgets por distancia
+            const widgetConfigs = {
+                '21K': {
+                    containerId: 'ranking-container-697372ed-82d8-4f5d-b40c-4ff5ac1f1c48-21K',
+                    competitionId: '697372ed-82d8-4f5d-b40c-4ff5ac1f1c48',
+                    event: '21K',
+                    pageSize: window.innerWidth < 768 ? 25 : 50, // 25 en mobile, 50 en desktop
+                    loaded: false
+                },
+                '10K': {
+                    containerId: 'ranking-container-697372ed-82d8-4f5d-b40c-4ff5ac1f1c48-10K',
+                    competitionId: '697372ed-82d8-4f5d-b40c-4ff5ac1f1c48',
+                    event: '10K',
+                    pageSize: window.innerWidth < 768 ? 25 : 50,
+                    loaded: false
+                },
+                '5K': {
+                    containerId: 'ranking-container-697372ed-82d8-4f5d-b40c-4ff5ac1f1c48-5K',
+                    competitionId: '697372ed-82d8-4f5d-b40c-4ff5ac1f1c48',
+                    event: '5K',
+                    pageSize: window.innerWidth < 768 ? 25 : 50,
+                    loaded: false
+                },
+                '15K': {
+                    containerId: 'ranking-container-697372ed-82d8-4f5d-b40c-4ff5ac1f1c48-15K',
+                    competitionId: '697372ed-82d8-4f5d-b40c-4ff5ac1f1c48',
+                    event: '1.5K',
+                    pageSize: window.innerWidth < 768 ? 25 : 50,
+                    loaded: false
+                }
+            };
+            
+            // Detectar si el scroll horizontal llegó al final
+            function checkScrollEnd() {
+                const isAtEnd = tabNav.scrollLeft + tabNav.clientWidth >= tabNav.scrollWidth - 5;
+                if (isAtEnd) {
+                    tabNavWrapper.classList.add('scrolled-end');
+                } else {
+                    tabNavWrapper.classList.remove('scrolled-end');
+                }
+            }
+            
+            // Escuchar evento de scroll en tabs
+            tabNav.addEventListener('scroll', checkScrollEnd);
+            
+            // Verificar estado inicial
+            checkScrollEnd();
+            
+            // También verificar en resize
+            window.addEventListener('resize', checkScrollEnd);
+            
+            // Función para cargar el widget de una distancia específica (Lazy Loading)
+            function loadWidget(tabId) {
+                const config = widgetConfigs[tabId];
+                
+                // Si ya fue cargado, no hacer nada
+                if (config.loaded) return;
+                
+                // Marcar como cargado
+                config.loaded = true;
+                
+                // Crear y agregar el script dinámicamente
+                const script = document.createElement('script');
+                script.type = 'text/javascript';
+                script.src = 'https://development.timingsense.cloud/ts-rankings/main.js';
+                script.onload = function() {
+                    if (window.tsRankings && window.tsRankings.plugin) {
+                        window.tsRankings.plugin({
+                            config: { env: "prod" },
+                            container: document.getElementById(config.containerId),
+                            competitionId: config.competitionId,
+                            event: decodeURI(config.event),
+                            slug: "media-maraton-ruta-de-los-ulmos-2026",
+                            tableOptions: {
+                                density: "compact",
+                                pagination: {pageSize: config.pageSize, pageIndex: 0}
+                            }
+                        });
+                        
+                        // Iniciar observador de preloader para este tab
+                        hidePreloaderWhenLoaded(tabId);
+                    }
+                };
+                
+                document.body.appendChild(script);
+            }
+            
+            // Función para ocultar preloader cuando el contenido se carga
+            function hidePreloaderWhenLoaded(tabId) {
+                const config = widgetConfigs[tabId];
+                const container = document.getElementById(config.containerId);
+                const tabPanel = document.getElementById('tab-content-' + tabId);
+                
+                if (!container || !tabPanel) return;
+                
+                // Observar cambios en el contenedor
+                const observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                        // Si se agregó contenido al contenedor
+                        if (mutation.addedNodes.length > 0) {
+                            // Agregar clase para ocultar preloader
+                            tabPanel.classList.add('content-loaded');
+                            observer.disconnect();
+                        }
+                    });
+                });
+                
+                // Configurar el observer
+                observer.observe(container, {
+                    childList: true,
+                    subtree: true
+                });
+                
+                // Timeout de seguridad: ocultar preloader después de 10 segundos aunque no se detecte contenido
+                setTimeout(function() {
+                    tabPanel.classList.add('content-loaded');
+                    observer.disconnect();
+                }, 10000);
+            }
+            
+            // Cargar el widget del tab activo inicial (21K)
+            loadWidget('21K');
+            
+            // Manejo de clicks en tabs
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetTab = this.getAttribute('data-tab');
+                    
+                    // Remover estado activo de todos los botones y restaurar estilos inactivos
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('border-orange-500', 'text-orange-600');
+                        btn.classList.add('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+                        btn.setAttribute('aria-selected', 'false');
+                    });
+                    
+                    // Agregar estado activo al botón clickeado y remover hovers
+                    this.classList.remove('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+                    this.classList.add('border-orange-500', 'text-orange-600');
+                    this.setAttribute('aria-selected', 'true');
+                    
+                    // Ocultar todos los paneles
+                    tabPanels.forEach(panel => {
+                        panel.classList.add('hidden');
+                    });
+                    
+                    // Mostrar el panel seleccionado
+                    const targetPanel = document.getElementById('tab-content-' + targetTab);
+                    if (targetPanel) {
+                        targetPanel.classList.remove('hidden');
+                        
+                        // Cargar el widget si no ha sido cargado (Lazy Loading)
+                        loadWidget(targetTab);
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
