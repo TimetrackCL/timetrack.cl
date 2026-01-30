@@ -1,0 +1,37 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "slug": "como-funciona-cronometraje-chip",
+      "title": "Cronometraje de Carreras con Chip: ¿Cómo Funciona y Por Qué Es la Mejor Opción?",
+      "description": "Descubre cómo funciona el cronometraje de carreras con chip, sus ventajas tecnológicas y por qué es la mejor opción para eventos deportivos en Chile.",
+      "date": "2025-03-01",
+      "author": "Miguel Cantillana",
+      "category": "Tecnología",
+      "image": "/assets/images/blog/1-mini-photo-blog.jpg",
+      "tags": ["cronometraje", "tecnología", "RFID", "running"]
+    },
+    {
+      "id": 2,
+      "slug": "como-elegir-el-mejor-sistema-de-cronometraje-para-carreras",
+      "title": "¿Cómo Elegir el Mejor Sistema de Cronometraje para Carreras?",
+      "description": "Para productoras de eventos deportivos, elegir el sistema de cronometraje adecuado es una decisión estratégica que impacta directamente en la experiencia del participante.",
+      "date": "2025-03-01",
+      "author": "Miguel Cantillana",
+      "category": "Tecnología",
+      "image": "/assets/images/blog/mini-photo-como-elegir-el-mejor-sistema-de-cronometraje-para-carreras.jpg",
+      "tags": ["cronometraje", "eventos", "tecnología", "guía"]
+    },
+    {
+      "id": 3,
+      "slug": "tiempo-chip-vs-tiempo-disparo",
+      "title": "Tiempo Chip vs. Tiempo Gunshot: ¿Cuál es la Diferencia?",
+      "description": "Descubre la diferencia entre el tiempo chip y el tiempo gunshot, cuál es más preciso y cuál se utiliza en competencias oficiales.",
+      "date": "2025-03-01",
+      "author": "Miguel Cantillana",
+      "category": "Tecnología",
+      "image": "/assets/images/blog/mini-photo-tiempo-chip-vs-tiempo-disparo.jpg",
+      "tags": ["cronometraje", "running", "tecnología", "competencias"]
+    }
+  ]
+}

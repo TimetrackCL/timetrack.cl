@@ -1,0 +1,65 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "slug": "maraton-de-molina-2025",
+      "title": "Maratón de Molina 2025",
+      "date": "2025-11-30",
+      "location": "Molina, Curicó, Chile",
+      "category": "running",
+      "image": "/assets/images/events/maraton-molina-logo-efluj.jpg",
+      "participants": 900,
+      "linkType": "internal",
+      "link": "/results/maraton-de-molina-2025",
+      "status": "finished",
+      "liveLink": null,
+      "results": [
+        {
+          "distance": "42k",
+          "displayName": "42K",
+          "file": "/data/maraton-molina-42k.json"
+        },
+        {
+          "distance": "21k",
+          "displayName": "21K",
+          "file": "/data/maraton-molina-21k.json"
+        },
+        {
+          "distance": "7k",
+          "displayName": "7K",
+          "file": "/data/maraton-molina-7k.json"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "corriendo-al-centenario-pucv-2025",
+      "title": "Corriendo al Centenario Pucv 2025",
+      "date": "2025-11-09",
+      "location": "Valparaíso, Chile",
+      "category": "running",
+      "image": "/assets/images/events/logo_corriendo_al_centenario_440x440.jpg",
+      "participants": 1500,
+      "linkType": "internal",
+      "link": "/results/corriendo-al-centenario-pucv-2025",
+      "status": "finished",
+      "liveLink": null,
+      "results": []
+    },
+    {
+      "id": 3,
+      "slug": "stgo10k-by-asics",
+      "title": "Stgo10K by Asics 2025",
+      "date": "2025-10-26",
+      "location": "Ñuñoa, Chile",
+      "category": "running",
+      "image": "/assets/images/events/KV-400x400px-100_V2.jpg",
+      "participants": 2000,
+      "linkType": "internal",
+      "link": "/results/stgo10k-by-asics",
+      "status": "finished",
+      "liveLink": null,
+      "results": []
+    }
+  ]
+}

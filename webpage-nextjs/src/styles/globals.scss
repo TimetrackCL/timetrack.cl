@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Custom styles
+@import "custom/reboot";
+@import "custom/helper";
+@import "custom/navbar";
+@import "custom/hero";
