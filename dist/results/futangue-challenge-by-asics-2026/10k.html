@@ -4,12 +4,12 @@
 <head>
     <meta charset="utf-8" />
 
-    <title>Resultados Stgo10K by Asics | Timetrack</title>
+    <title>Resultados 10K - Futangue Challenge by ASICS 2026 | Timetrack</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Resultados oficiales del Stgo10K by Asics. Consulta posiciones, tiempos y clasificaciones.">
-    <link rel="canonical" href="https://timetrack.cl/results/stgo10k-by-asics" />
+    <meta name="description" content="Resultados oficiales 10K del Futangue Challenge by ASICS 2026. Consulta posiciones, tiempos y clasificaciones.">
+    <link rel="canonical" href="https://timetrack.cl/results/futangue-challenge-by-asics-2026/10k" />
 
     <!-- Theme favicon -->
     <link rel="shortcut icon" href="/assets/images/favicon.ico">
@@ -30,12 +30,33 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0, s-maxage=0">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
+    
+    <!-- Preload TimingSense -->
+    <link rel="preload" href="https://development.timingsense.cloud/ts-rankings/main.js" as="script">
+    
+    <!-- Estilos personalizados para TimingSense -->
+    <style>
+        :root {
+            --primary-color: #1D67FF;
+            --split-selected-color: var(--primary-color);
+            --light-background: #f3f3f3;
+            --dark-background: #888;
+            --web-background: #fff;
+            --font-size: 12px;
+            --icon-size: 30px;
+            --navigation-padding: 20px;
+            --detail-item-font-size: 20px;
+            --detail-item-title-font-size: 16px;
+            --detail-subtitle-font-size: 14px;
+            --detail-table-font-size: 14px;
+        }
+    </style>
 </head>
 
 <body class="text-gray-700">
 
     <!-- =========== Navbar Start =========== -->
-    <header id="navbar" class="dark fixed top-0 inset-x-0 flex items-center z-40 w-full lg:bg-transparent bg-white transition-all py-5 nav-sticky" >
+    <header id="navbar" class="results-page fixed top-0 inset-x-0 flex items-center z-40 w-full lg:bg-transparent bg-white transition-all py-5 " >
         <div class="container">
             <nav class="flex items-center">
                 <!-- Navbar Brand Logo -->
@@ -128,11 +149,12 @@
     <!-- Breadcrumbs -->
     <section class="pt-20">
         <div class="container">
-            <div class="py-14">
+            <div class="pt-14">
                 <div class="flex flex-wrap items-center gap-2 bg-gray-100 py-2 px-3">
                     <a href="/" class="transition-all hover:text-primary">Home</a> /
                     <a href="/results/" class="transition-all hover:text-primary">Resultados</a> /
-                    <p class="text-gray-500">Stgo10K by Asics</p>
+                    <a href="/results/futangue-challenge-by-asics-2026/" class="transition-all hover:text-primary">Futangue Challenge by ASICS 2026</a> /
+                    <p class="text-gray-500">10K</p>
                 </div>
             </div>
         </div>
@@ -142,54 +164,30 @@
     <section class="pb-20">
         <div class="container">
             
-            <style>
-                :root {
-                        --primary-color: #1D67FF;
-                        --split-selected-color: var(--primary-color);
-                        --light-background: #f3f3f3;
-                        --dark-background: #888;
-                        --web-background: #fff;
-                        --font-size: 12px;
-                        --icon-size: 30px;
-                        --navigation-padding: 20px;
-                        --detail-item-font-size: 20px;
-                        --detail-item-title-font-size: 16px;
-                        --detail-subtitle-font-size: 14px;
-                        --detail-table-font-size: 14px;
-                    }
-            </style>
-            <div id="ranking-container-68f8de49-a044-4b22-b1bc-4bdaac1f1473-10K"></div>
-            <script type="text/javascript" 
-                    onload='window.tsRankings.plugin({
-                    config: { api: "https://rankings-api.timingsense.cloud/api/competition" },
-                    container: document.getElementById("ranking-container-68f8de49-a044-4b22-b1bc-4bdaac1f1473-10K"),
-                    competitionId: "68f8de49-a044-4b22-b1bc-4bdaac1f1473",
-                    event: decodeURI("10K"),
-                    withSummary: true,
-                    defaultTab: "ranking",
-                    translations: {
-                        en: {
-                            tableHeaders: {
-                                pos: "Position",
-                                dorsal: "BiB",
-                                name: "Name",
-                                surname: "Surname",
-                                club: "Club",
-                                time: "Time",
-                                status: "Status",
-                            },
-                            fieldValues: {
-                                status: {
-                                    finished: "Finished",
-                                    retired: "Withdrawn"
-                                }
-                            }
-                        }
-                    }
-                });'
-                    src="https://development.timingsense.cloud/ts-rankings/main.js?v=1770519509496" 
-            >
-            </script>
+            <!-- Encabezado -->
+            <div class="py-8">
+                <div class="flex items-center justify-between mb-6">
+                    <div>
+                        <h1 class="text-4xl font-bold text-gray-800 mb-2">Resultados 10K</h1>
+                        <p class="text-gray-600">Futangue Challenge by ASICS 2026</p>
+                    </div>
+                    <a href="/results/futangue-challenge-by-asics-2026/" class="px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold rounded-lg transition-colors duration-300">
+                        ← Volver a clasificaciones
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contenedor de Resultados TimingSense -->
+            <div id="ranking-container-6980bc5c-c024-4e08-ae0c-49e1ac1f03c1-10K">
+                <!-- Loader -->
+                <div id="results-loader" class="flex flex-col items-center justify-center py-20">
+                    <div class="relative">
+                        <div class="w-20 h-20 border-4 border-gray-200 border-t-primary rounded-full animate-spin"></div>
+                    </div>
+                    <p class="mt-6 text-lg text-gray-600 font-medium">Cargando resultados...</p>
+                    <p class="mt-2 text-sm text-gray-500">Por favor espera un momento</p>
+                </div>
+            </div>
             
         </div>
     </section>
@@ -277,6 +275,54 @@
 
     <!-- chatbots -->
     <!-- <script src="https://aurora.safeware.cl/integration/15af0a50-e884-445a-976c-1344c0d09470/aurora-chat-plugin.js"></script> -->
+    
+    <!-- Script de TimingSense -->
+    <script type="text/javascript" 
+            onload='window.tsRankings.plugin({
+                config: { env: "prod" },
+                container: document.getElementById("ranking-container-6980bc5c-c024-4e08-ae0c-49e1ac1f03c1-10K"),
+                slug: "futangue-challenge-by-asics-2026",
+                competitionId: "6980bc5c-c024-4e08-ae0c-49e1ac1f03c1",
+                event: decodeURI("10K")
+            });'
+            src="https://development.timingsense.cloud/ts-rankings/main.js">
+    </script>
+    
+    <!-- Script para ocultar el loader cuando cargue el contenido -->
+    <script>
+        // Observar cambios en el contenedor para detectar cuando se carga el contenido
+        const container = document.getElementById('ranking-container-6980bc5c-c024-4e08-ae0c-49e1ac1f03c1-10K');
+        const loader = document.getElementById('results-loader');
+        
+        // Configurar el observer para detectar cuando se agregue contenido
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                // Si se agregaron nodos al contenedor (además del loader)
+                if (mutation.addedNodes.length > 0) {
+                    const hasContent = Array.from(container.children).some(child => 
+                        child.id !== 'results-loader' && child.innerHTML.trim() !== ''
+                    );
+                    
+                    if (hasContent && loader) {
+                        loader.style.display = 'none';
+                    }
+                }
+            });
+        });
+        
+        // Comenzar a observar el contenedor
+        observer.observe(container, { 
+            childList: true, 
+            subtree: true 
+        });
+        
+        // Fallback: ocultar el loader después de 10 segundos si no se detecta contenido
+        setTimeout(() => {
+            if (loader && loader.style.display !== 'none') {
+                loader.style.display = 'none';
+            }
+        }, 10000);
+    </script>
 
 </body>
 

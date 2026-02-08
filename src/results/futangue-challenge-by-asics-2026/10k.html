@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    @@include("../../partials/title-meta.html", {
+        "title": "Resultados 10K - Futangue Challenge by ASICS 2026 | Timetrack", 
+        "description": "Resultados oficiales 10K del Futangue Challenge by ASICS 2026. Consulta posiciones, tiempos y clasificaciones.",
+        "canonical": "https://timetrack.cl/results/futangue-challenge-by-asics-2026/10k"
+    })
+
+    @@include('../../partials/head-css.html')
+    
+    <!-- Control de caché para resultados en tiempo real -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0, s-maxage=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <!-- Preload TimingSense -->
+    <link rel="preload" href="https://development.timingsense.cloud/ts-rankings/main.js" as="script">
+    
+    <!-- Estilos personalizados para TimingSense -->
+    <style>
+        :root {
+            --primary-color: #1D67FF;
+            --split-selected-color: var(--primary-color);
+            --light-background: #f3f3f3;
+            --dark-background: #888;
+            --web-background: #fff;
+            --font-size: 12px;
+            --icon-size: 30px;
+            --navigation-padding: 20px;
+            --detail-item-font-size: 20px;
+            --detail-item-title-font-size: 16px;
+            --detail-subtitle-font-size: 14px;
+            --detail-table-font-size: 14px;
+        }
+    </style>
+</head>
+
+<body class="text-gray-700">
+
+    @@include('../../partials/navbar.html', {"link-color": "results-page", "header-class": ""})
+
+    <!-- Breadcrumbs -->
+    <section class="pt-20">
+        <div class="container">
+            <div class="pt-14">
+                <div class="flex flex-wrap items-center gap-2 bg-gray-100 py-2 px-3">
+                    <a href="/" class="transition-all hover:text-primary">Home</a> /
+                    <a href="/results/" class="transition-all hover:text-primary">Resultados</a> /
+                    <a href="/results/futangue-challenge-by-asics-2026/" class="transition-all hover:text-primary">Futangue Challenge by ASICS 2026</a> /
+                    <p class="text-gray-500">10K</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <section class="pb-20">
+        <div class="container">
+            
+            <!-- Encabezado -->
+            <div class="py-8">
+                <div class="flex items-center justify-between mb-6">
+                    <div>
+                        <h1 class="text-4xl font-bold text-gray-800 mb-2">Resultados 10K</h1>
+                        <p class="text-gray-600">Futangue Challenge by ASICS 2026</p>
+                    </div>
+                    <a href="/results/futangue-challenge-by-asics-2026/" class="px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold rounded-lg transition-colors duration-300">
+                        ← Volver a clasificaciones
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contenedor de Resultados TimingSense -->
+            <div id="ranking-container-6980bc5c-c024-4e08-ae0c-49e1ac1f03c1-10K">
+                <!-- Loader -->
+                <div id="results-loader" class="flex flex-col items-center justify-center py-20">
+                    <div class="relative">
+                        <div class="w-20 h-20 border-4 border-gray-200 border-t-primary rounded-full animate-spin"></div>
+                    </div>
+                    <p class="mt-6 text-lg text-gray-600 font-medium">Cargando resultados...</p>
+                    <p class="mt-2 text-sm text-gray-500">Por favor espera un momento</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    @@include('../../partials/footer.html')
+    @@include('../../partials/back-to-top.html')
+    @@include('../../partials/footer-scripts.html')
+    
+    <!-- Script de TimingSense -->
+    <script type="text/javascript" 
+            onload='window.tsRankings.plugin({
+                config: { env: "prod" },
+                container: document.getElementById("ranking-container-6980bc5c-c024-4e08-ae0c-49e1ac1f03c1-10K"),
+                slug: "futangue-challenge-by-asics-2026",
+                competitionId: "6980bc5c-c024-4e08-ae0c-49e1ac1f03c1",
+                event: decodeURI("10K")
+            });'
+            src="https://development.timingsense.cloud/ts-rankings/main.js">
+    </script>
+    
+    <!-- Script para ocultar el loader cuando cargue el contenido -->
+    <script>
+        // Observar cambios en el contenedor para detectar cuando se carga el contenido
+        const container = document.getElementById('ranking-container-6980bc5c-c024-4e08-ae0c-49e1ac1f03c1-10K');
+        const loader = document.getElementById('results-loader');
+        
+        // Configurar el observer para detectar cuando se agregue contenido
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                // Si se agregaron nodos al contenedor (además del loader)
+                if (mutation.addedNodes.length > 0) {
+                    const hasContent = Array.from(container.children).some(child => 
+                        child.id !== 'results-loader' && child.innerHTML.trim() !== ''
+                    );
+                    
+                    if (hasContent && loader) {
+                        loader.style.display = 'none';
+                    }
+                }
+            });
+        });
+        
+        // Comenzar a observar el contenedor
+        observer.observe(container, { 
+            childList: true, 
+            subtree: true 
+        });
+        
+        // Fallback: ocultar el loader después de 10 segundos si no se detecta contenido
+        setTimeout(() => {
+            if (loader && loader.style.display !== 'none') {
+                loader.style.display = 'none';
+            }
+        }, 10000);
+    </script>
+
+</body>
+
+</html>
