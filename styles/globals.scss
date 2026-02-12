@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles from SCSS */
+@import '../src/assets/scss/custom/helper';
+@import '../src/assets/scss/custom/navbar';
+@import '../src/assets/scss/custom/hero';
+@import '../src/assets/scss/custom/gallery';
