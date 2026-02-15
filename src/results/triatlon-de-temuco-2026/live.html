@@ -333,9 +333,44 @@
                 <div class="border-b border-gray-200 mb-4 md:mb-6 overflow-x-auto tab-nav-wrapper">
                     <nav class="flex space-x-4 md:space-x-8 px-4" role="tablist">
                         <button class="tab-button py-3 md:py-4 px-4 md:px-1 border-b-2 font-medium text-sm md:text-sm whitespace-nowrap transition-colors duration-200 border-orange-500 text-orange-600" 
-                                data-tab="KIDS-7-9"
+                                data-tab="OLIMPICO"
                                 role="tab"
                                 aria-selected="true">
+                            <span class="hidden md:inline">OLÍMPICO</span>
+                            <span class="md:hidden">OLÍMPICO</span>
+                        </button>
+                        <button class="tab-button py-3 md:py-4 px-4 md:px-1 border-b-2 font-medium text-sm md:text-sm whitespace-nowrap transition-colors duration-200 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" 
+                                data-tab="POSTAS-OLIMPICO"
+                                role="tab"
+                                aria-selected="false">
+                            <span class="hidden md:inline">POSTAS OLÍMPICO</span>
+                            <span class="md:hidden">P. OLÍMPICO</span>
+                        </button>
+                        <button class="tab-button py-3 md:py-4 px-4 md:px-1 border-b-2 font-medium text-sm md:text-sm whitespace-nowrap transition-colors duration-200 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" 
+                                data-tab="SPRINT"
+                                role="tab"
+                                aria-selected="false">
+                            <span class="hidden md:inline">SPRINT</span>
+                            <span class="md:hidden">SPRINT</span>
+                        </button>
+                        <button class="tab-button py-3 md:py-4 px-4 md:px-1 border-b-2 font-medium text-sm md:text-sm whitespace-nowrap transition-colors duration-200 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" 
+                                data-tab="POSTA-SPRINT"
+                                role="tab"
+                                aria-selected="false">
+                            <span class="hidden md:inline">POSTA SPRINT</span>
+                            <span class="md:hidden">P. SPRINT</span>
+                        </button>
+                        <button class="tab-button py-3 md:py-4 px-4 md:px-1 border-b-2 font-medium text-sm md:text-sm whitespace-nowrap transition-colors duration-200 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" 
+                                data-tab="ROOKIE"
+                                role="tab"
+                                aria-selected="false">
+                            <span class="hidden md:inline">ROOKIE</span>
+                            <span class="md:hidden">ROOKIE</span>
+                        </button>
+                        <button class="tab-button py-3 md:py-4 px-4 md:px-1 border-b-2 font-medium text-sm md:text-sm whitespace-nowrap transition-colors duration-200 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" 
+                                data-tab="KIDS-7-9"
+                                role="tab"
+                                aria-selected="false">
                             <span class="hidden md:inline">KIDS 7 a 9 años</span>
                             <span class="md:hidden">KIDS 7-9</span>
                         </button>
@@ -374,71 +409,46 @@
                             <span class="hidden md:inline">KIDS 18 a 19 años</span>
                             <span class="md:hidden">KIDS 18-19</span>
                         </button>
-                        <button class="tab-button py-3 md:py-4 px-4 md:px-1 border-b-2 font-medium text-sm md:text-sm whitespace-nowrap transition-colors duration-200 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" 
-                                data-tab="ROOKIE"
-                                role="tab"
-                                aria-selected="false">
-                            <span class="hidden md:inline">ROOKIE</span>
-                            <span class="md:hidden">ROOKIE</span>
-                        </button>
                     </nav>
                 </div>
             </div>
 
                 <!-- Contenido de los Tabs -->
                 <div class="tab-content px-4">
-                    <!-- Tab KIDS 7 a 9 años -->
-                    <div id="tab-content-KIDS-7-9" class="tab-panel" role="tabpanel">
+                    <!-- Tab OLÍMPICO -->
+                    <div id="tab-content-OLIMPICO" class="tab-panel" role="tabpanel">
                         <div class="preloader-container">
                             <div class="spinner"></div>
                             <p class="preloader-text">Cargando resultados...</p>
                         </div>
-                        <div id="ranking-container-698fad17-4478-4b5e-a072-4c49ac1f1fcb-KIDS-7-a-9-anos"></div>
+                        <div id="live-widget-OLIMPICO" style=""></div>
                     </div>
 
-                    <!-- Tab KIDS 10 a 11 años -->
-                    <div id="tab-content-KIDS-10-11" class="tab-panel hidden" role="tabpanel">
+                    <!-- Tab POSTAS OLÍMPICO -->
+                    <div id="tab-content-POSTAS-OLIMPICO" class="tab-panel hidden" role="tabpanel">
                         <div class="preloader-container">
                             <div class="spinner"></div>
                             <p class="preloader-text">Cargando resultados...</p>
                         </div>
-                        <div id="ranking-container-698fad17-4478-4b5e-a072-4c49ac1f1fcb-KIDS-10-a-11-anos"></div>
+                        <div id="live-widget-POSTAS-OLIMPICO" style=""></div>
                     </div>
 
-                    <!-- Tab KIDS 12 a 13 años -->
-                    <div id="tab-content-KIDS-12-13" class="tab-panel hidden" role="tabpanel">
+                    <!-- Tab SPRINT -->
+                    <div id="tab-content-SPRINT" class="tab-panel hidden" role="tabpanel">
                         <div class="preloader-container">
                             <div class="spinner"></div>
                             <p class="preloader-text">Cargando resultados...</p>
                         </div>
-                        <div id="ranking-container-698fad17-4478-4b5e-a072-4c49ac1f1fcb-KIDS-12-a-13-anos"></div>
+                        <div id="live-widget-SPRINT" style=""></div>
                     </div>
 
-                    <!-- Tab KIDS 14 a 15 años -->
-                    <div id="tab-content-KIDS-14-15" class="tab-panel hidden" role="tabpanel">
+                    <!-- Tab POSTA SPRINT -->
+                    <div id="tab-content-POSTA-SPRINT" class="tab-panel hidden" role="tabpanel">
                         <div class="preloader-container">
                             <div class="spinner"></div>
                             <p class="preloader-text">Cargando resultados...</p>
                         </div>
-                        <div id="ranking-container-698fad17-4478-4b5e-a072-4c49ac1f1fcb-KIDS-14-a-15-anos"></div>
-                    </div>
-
-                    <!-- Tab KIDS 16 a 17 años -->
-                    <div id="tab-content-KIDS-16-17" class="tab-panel hidden" role="tabpanel">
-                        <div class="preloader-container">
-                            <div class="spinner"></div>
-                            <p class="preloader-text">Cargando resultados...</p>
-                        </div>
-                        <div id="ranking-container-698fad17-4478-4b5e-a072-4c49ac1f1fcb-KIDS-16-a-17-anos"></div>
-                    </div>
-
-                    <!-- Tab KIDS 18 a 19 años -->
-                    <div id="tab-content-KIDS-18-19" class="tab-panel hidden" role="tabpanel">
-                        <div class="preloader-container">
-                            <div class="spinner"></div>
-                            <p class="preloader-text">Cargando resultados...</p>
-                        </div>
-                        <div id="ranking-container-698fad17-4478-4b5e-a072-4c49ac1f1fcb-KIDS-18-a-19-anos"></div>
+                        <div id="live-widget-POSTA-SPRINT" style=""></div>
                     </div>
 
                     <!-- Tab ROOKIE -->
@@ -447,7 +457,61 @@
                             <div class="spinner"></div>
                             <p class="preloader-text">Cargando resultados...</p>
                         </div>
-                        <div id="ranking-container-698fad17-4478-4b5e-a072-4c49ac1f1fcb-ROOKIE"></div>
+                        <div id="live-widget-ROOKIE" style=""></div>
+                    </div>
+
+                    <!-- Tab KIDS 7 a 9 años -->
+                    <div id="tab-content-KIDS-7-9" class="tab-panel hidden" role="tabpanel">
+                        <div class="preloader-container">
+                            <div class="spinner"></div>
+                            <p class="preloader-text">Cargando resultados...</p>
+                        </div>
+                        <div id="live-widget-KIDS-7-9" style=""></div>
+                    </div>
+
+                    <!-- Tab KIDS 10 a 11 años -->
+                    <div id="tab-content-KIDS-10-11" class="tab-panel hidden" role="tabpanel">
+                        <div class="preloader-container">
+                            <div class="spinner"></div>
+                            <p class="preloader-text">Cargando resultados...</p>
+                        </div>
+                        <div id="live-widget-KIDS-10-11" style=""></div>
+                    </div>
+
+                    <!-- Tab KIDS 12 a 13 años -->
+                    <div id="tab-content-KIDS-12-13" class="tab-panel hidden" role="tabpanel">
+                        <div class="preloader-container">
+                            <div class="spinner"></div>
+                            <p class="preloader-text">Cargando resultados...</p>
+                        </div>
+                        <div id="live-widget-KIDS-12-13" style=""></div>
+                    </div>
+
+                    <!-- Tab KIDS 14 a 15 años -->
+                    <div id="tab-content-KIDS-14-15" class="tab-panel hidden" role="tabpanel">
+                        <div class="preloader-container">
+                            <div class="spinner"></div>
+                            <p class="preloader-text">Cargando resultados...</p>
+                        </div>
+                        <div id="live-widget-KIDS-14-15" style=""></div>
+                    </div>
+
+                    <!-- Tab KIDS 16 a 17 años -->
+                    <div id="tab-content-KIDS-16-17" class="tab-panel hidden" role="tabpanel">
+                        <div class="preloader-container">
+                            <div class="spinner"></div>
+                            <p class="preloader-text">Cargando resultados...</p>
+                        </div>
+                        <div id="live-widget-KIDS-16-17" style=""></div>
+                    </div>
+
+                    <!-- Tab KIDS 18 a 19 años -->
+                    <div id="tab-content-KIDS-18-19" class="tab-panel hidden" role="tabpanel">
+                        <div class="preloader-container">
+                            <div class="spinner"></div>
+                            <p class="preloader-text">Cargando resultados...</p>
+                        </div>
+                        <div id="live-widget-KIDS-18-19" style=""></div>
                     </div>
                 </div>
             </div>
@@ -458,87 +522,98 @@
     @@include('../../partials/back-to-top.html')
     @@include('../../partials/footer-scripts.html')
 
-    <!-- Script para manejo de tabs y carga de widgets tsRankings -->
+    <!-- Cargar ts-live UNA sola vez -->
+    <script src="https://development.timingsense.cloud/ts-live/main.js?v=@@buildVersion"></script>
+
+    <!-- Script para manejo de tabs y widgets tsLive -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const tabButtons = document.querySelectorAll('.tab-button');
-            const tabPanels = document.querySelectorAll('.tab-panel');
-            const tabNavWrapper = document.querySelector('.tab-nav-wrapper');
-            const tabNav = tabNavWrapper.querySelector('nav');
-            const liveHeader = document.getElementById('live-header');
-            let lastScroll = 0;
+            var tabButtons = document.querySelectorAll('.tab-button');
+            var tabPanels = document.querySelectorAll('.tab-panel');
+            var tabNavWrapper = document.querySelector('.tab-nav-wrapper');
+            var tabNav = tabNavWrapper.querySelector('nav');
+            var liveHeader = document.getElementById('live-header');
+            var lastScroll = 0;
             
             // Header sticky inteligente (solo mobile)
             function handleHeaderScroll() {
-                if (window.innerWidth >= 768) return; // Solo en mobile
-                
-                const currentScroll = window.pageYOffset;
-                
+                if (window.innerWidth >= 768) return;
+                var currentScroll = window.pageYOffset;
                 if (currentScroll > 50) {
                     liveHeader.classList.add('compact');
                 } else {
                     liveHeader.classList.remove('compact');
                 }
-                
                 lastScroll = currentScroll;
             }
             
-            // Escuchar scroll para header compacto
             window.addEventListener('scroll', handleHeaderScroll);
             window.addEventListener('resize', handleHeaderScroll);
             
-            // Configuración de widgets por categoría (datos originales de TimingSense)
-            const widgetConfigs = {
-                'KIDS-7-9': {
-                    containerId: 'ranking-container-698fad17-4478-4b5e-a072-4c49ac1f1fcb-KIDS-7-a-9-anos',
-                    competitionId: '698fad17-4478-4b5e-a072-4c49ac1f1fcb',
-                    event: 'KIDS%207%20a%209%20a%C3%B1os%20',
-                    slug: 'triatln-de-temuco-2026',
-                    loaded: false
-                },
-                'KIDS-10-11': {
-                    containerId: 'ranking-container-698fad17-4478-4b5e-a072-4c49ac1f1fcb-KIDS-10-a-11-anos',
-                    competitionId: '698fad17-4478-4b5e-a072-4c49ac1f1fcb',
-                    event: 'KIDS%2010%20a%2011%20a%C3%B1os%20',
-                    slug: 'triatln-de-temuco-2026',
-                    loaded: false
-                },
-                'KIDS-12-13': {
-                    containerId: 'ranking-container-698fad17-4478-4b5e-a072-4c49ac1f1fcb-KIDS-12-a-13-anos',
-                    competitionId: '698fad17-4478-4b5e-a072-4c49ac1f1fcb',
-                    event: 'KIDS%2012%20a%2013%20a%C3%B1os%20',
-                    slug: 'triatln-de-temuco-2026',
-                    loaded: false
-                },
-                'KIDS-14-15': {
-                    containerId: 'ranking-container-698fad17-4478-4b5e-a072-4c49ac1f1fcb-KIDS-14-a-15-anos',
-                    competitionId: '698fad17-4478-4b5e-a072-4c49ac1f1fcb',
-                    event: 'KIDS%2014%20a%2015%20a%C3%B1os%20',
-                    slug: 'triatln-de-temuco-2026',
-                    loaded: false
-                },
-                'KIDS-16-17': {
-                    containerId: 'ranking-container-698fad17-4478-4b5e-a072-4c49ac1f1fcb-KIDS-16-a-17-anos',
-                    competitionId: '698fad17-4478-4b5e-a072-4c49ac1f1fcb',
-                    event: 'KIDS%2016%20a%2017%20a%C3%B1os',
-                    slug: 'triatln-de-temuco-2026',
-                    loaded: false
-                },
-                'KIDS-18-19': {
-                    containerId: 'ranking-container-698fad17-4478-4b5e-a072-4c49ac1f1fcb-KIDS-18-a-19-anos',
-                    competitionId: '698fad17-4478-4b5e-a072-4c49ac1f1fcb',
-                    event: 'KIDS%2018%20a%2019%20a%C3%B1os%20',
-                    slug: 'triatln-de-temuco-2026',
-                    loaded: false
-                },
-                'ROOKIE': {
-                    containerId: 'ranking-container-698fad17-4478-4b5e-a072-4c49ac1f1fcb-ROOKIE',
-                    competitionId: '698fad17-4478-4b5e-a072-4c49ac1f1fcb',
-                    event: 'ROOKIE',
-                    slug: 'triatln-de-temuco-2026',
-                    loaded: false
-                }
+            // Configuración de cada evento (misma llamada que el widget original)
+            var widgetConfigs = {
+                'KIDS-7-9':   { containerId: 'live-widget-KIDS-7-9',   event: 'KIDS 7 a 9 años ',   loaded: false },
+                'KIDS-10-11': { containerId: 'live-widget-KIDS-10-11', event: 'KIDS 10 a 11 años ',  loaded: false },
+                'KIDS-12-13': { containerId: 'live-widget-KIDS-12-13', event: 'KIDS 12 a 13 años ',  loaded: false },
+                'KIDS-14-15': { containerId: 'live-widget-KIDS-14-15', event: 'KIDS 14 a 15 años ',  loaded: false },
+                'KIDS-16-17': { containerId: 'live-widget-KIDS-16-17', event: 'KIDS 16 a 17 años',   loaded: false },
+                'KIDS-18-19': { containerId: 'live-widget-KIDS-18-19', event: 'KIDS 18 a 19 años ',  loaded: false },
+                'ROOKIE':          { containerId: 'live-widget-ROOKIE',          event: 'ROOKIE',           loaded: false },
+                'SPRINT':          { containerId: 'live-widget-SPRINT',          event: 'SPRINT',           loaded: false },
+                'OLIMPICO':        { containerId: 'live-widget-OLIMPICO',        event: 'OLÍMPICO',         loaded: false },
+                'POSTAS-OLIMPICO': { containerId: 'live-widget-POSTAS-OLIMPICO', event: 'POSTAS OLÍMPICO',  loaded: false },
+                'POSTA-SPRINT':    { containerId: 'live-widget-POSTA-SPRINT',    event: 'POSTA SPRINT',     loaded: false }
             };
+            
+            // Función para inicializar un widget tsLive (lazy loading por tab)
+            function loadWidget(tabId) {
+                var config = widgetConfigs[tabId];
+                if (!config || config.loaded) return;
+                config.loaded = true;
+                
+                // Misma llamada que el widget original de tsLive
+                window.tsLive.plugin({
+                    container: document.getElementById(config.containerId),
+                    competitionId: '698fad17-4478-4b5e-a072-4c49ac1f1fcb',
+                    slug: 'triatln-de-temuco-2026',
+                    event: config.event,
+                    defaultMode: 'light',
+                    companyLogo: {
+                        dark: '',
+                        light: ''
+                    },
+                    env: 'prod'
+                });
+                
+                // Ocultar preloader cuando el widget renderice
+                hidePreloaderWhenLoaded(tabId);
+            }
+            
+            // Ocultar preloader cuando el contenido se carga
+            function hidePreloaderWhenLoaded(tabId) {
+                var config = widgetConfigs[tabId];
+                var container = document.getElementById(config.containerId);
+                var tabPanel = document.getElementById('tab-content-' + tabId);
+                if (!container || !tabPanel) return;
+                
+                var observer = new MutationObserver(function(mutations) {
+                    for (var i = 0; i < mutations.length; i++) {
+                        if (mutations[i].addedNodes.length > 0) {
+                            tabPanel.classList.add('content-loaded');
+                            observer.disconnect();
+                            return;
+                        }
+                    }
+                });
+                
+                observer.observe(container, { childList: true, subtree: true });
+                
+                // Timeout de seguridad
+                setTimeout(function() {
+                    tabPanel.classList.add('content-loaded');
+                    observer.disconnect();
+                }, 10000);
+            }
             
             // Detectar si el scroll horizontal llegó al final
             function checkScrollEnd() {
@@ -550,106 +625,36 @@
                 }
             }
             
-            // Escuchar evento de scroll en tabs
             tabNav.addEventListener('scroll', checkScrollEnd);
             checkScrollEnd();
             window.addEventListener('resize', checkScrollEnd);
             
-            // Función para cargar el widget tsRankings de una categoría específica (Lazy Loading)
-            function loadWidget(tabId) {
-                var config = widgetConfigs[tabId];
-                
-                // Si ya fue cargado, no hacer nada
-                if (config.loaded) return;
-                
-                // Marcar como cargado
-                config.loaded = true;
-                
-                // Crear y agregar el script dinámicamente (formato original de TimingSense)
-                var script = document.createElement('script');
-                script.type = 'text/javascript';
-                script.src = 'https://development.timingsense.cloud/ts-rankings/main.js';
-                script.onload = function() {
-                    if (window.tsRankings && window.tsRankings.plugin) {
-                        window.tsRankings.plugin({
-                            config: { env: "prod" },
-                            container: document.getElementById(config.containerId),
-                            competitionId: config.competitionId,
-                            event: decodeURI(config.event),
-                            slug: config.slug,
-                            tableOptions: {
-                                density: "compact",
-                                pagination: {pageSize: 50, pageIndex: 0}
-                            }
-                        });
-                        
-                        // Iniciar observador de preloader para este tab
-                        hidePreloaderWhenLoaded(tabId);
-                    }
-                };
-                
-                document.body.appendChild(script);
-            }
-            
-            // Función para ocultar preloader cuando el contenido se carga
-            function hidePreloaderWhenLoaded(tabId) {
-                var config = widgetConfigs[tabId];
-                var container = document.getElementById(config.containerId);
-                var tabPanel = document.getElementById('tab-content-' + tabId);
-                
-                if (!container || !tabPanel) return;
-                
-                // Observar cambios en el contenedor
-                var observer = new MutationObserver(function(mutations) {
-                    mutations.forEach(function(mutation) {
-                        if (mutation.addedNodes.length > 0) {
-                            tabPanel.classList.add('content-loaded');
-                            observer.disconnect();
-                        }
-                    });
-                });
-                
-                observer.observe(container, {
-                    childList: true,
-                    subtree: true
-                });
-                
-                // Timeout de seguridad: ocultar preloader después de 10 segundos
-                setTimeout(function() {
-                    tabPanel.classList.add('content-loaded');
-                    observer.disconnect();
-                }, 10000);
-            }
-            
-            // Cargar el widget del tab activo inicial (KIDS 7 a 9 años)
-            loadWidget('KIDS-7-9');
+            // Cargar el primer tab al inicio
+            loadWidget('OLIMPICO');
             
             // Manejo de clicks en tabs
             tabButtons.forEach(function(button) {
                 button.addEventListener('click', function() {
                     var targetTab = this.getAttribute('data-tab');
                     
-                    // Remover estado activo de todos los botones
                     tabButtons.forEach(function(btn) {
                         btn.classList.remove('border-orange-500', 'text-orange-600');
                         btn.classList.add('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
                         btn.setAttribute('aria-selected', 'false');
                     });
                     
-                    // Agregar estado activo al botón clickeado
                     this.classList.remove('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
                     this.classList.add('border-orange-500', 'text-orange-600');
                     this.setAttribute('aria-selected', 'true');
                     
-                    // Ocultar todos los paneles
                     tabPanels.forEach(function(panel) {
                         panel.classList.add('hidden');
                     });
                     
-                    // Mostrar el panel seleccionado
                     var targetPanel = document.getElementById('tab-content-' + targetTab);
                     if (targetPanel) {
                         targetPanel.classList.remove('hidden');
+                        // Inicializar widget solo cuando se muestra el tab
                         loadWidget(targetTab);
                     }
                 });
