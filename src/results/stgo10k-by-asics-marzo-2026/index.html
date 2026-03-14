@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    @@include("../../partials/title-meta.html", {
+        "title": "Resultados Stgo10K by Asics Marzo 2026 | Timetrack", 
+        "description": "Resultados oficiales de Stgo10K by Asics Marzo 2026. Consulta posiciones, tiempos y clasificaciones.",
+        "canonical": "https://timetrack.cl/results/stgo10k-by-asics-marzo-2026"
+    })
+
+    @@include('../../partials/head-css.html')
+    
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0, s-maxage=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+</head>
+
+<body class="text-gray-700">
+
+    @@include('../../partials/navbar.html', {"link-color": "results-page", "header-class": ""})
+
+    <!-- Breadcrumbs -->
+    <section class="pt-20">
+        <div class="container">
+            <div class="pt-14">
+                <div class="flex flex-wrap items-center gap-2 bg-gray-100 py-2 px-3">
+                    <a href="/" class="transition-all hover:text-primary">Home</a> /
+                    <a href="/results/" class="transition-all hover:text-primary">Resultados</a> /
+                    <p class="text-gray-500">Stgo10K by Asics Marzo 2026</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <section class="pb-20">
+        <div class="container">
+            
+            <!-- Sección de Clasificaciones -->
+            <div class="py-8">
+                <!-- Título -->
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">Clasificaciones</h2>
+                    <p class="text-gray-600">Selecciona la distancia para ver los resultados</p>
+                </div>
+
+                <!-- Grid de Cards de Clasificaciones -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Card 5K -->
+                    <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 p-6">
+                        <div class="mb-4">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3">5K</h3>
+                            <div class="space-y-2 text-gray-600">
+                                <div class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                    </svg>
+                                    <span class="text-sm">5 Kilómetros</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="live" class="block w-full bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-semibold py-3 px-4 rounded-lg transition-colors duration-300 text-center">
+                            VER CLASIFICACIONES
+                        </a>
+                    </div>
+
+                    <!-- Card 10K -->
+                    <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 p-6">
+                        <div class="mb-4">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3">10K</h3>
+                            <div class="space-y-2 text-gray-600">
+                                <div class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                    </svg>
+                                    <span class="text-sm">10 Kilómetros</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="live" class="block w-full bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-semibold py-3 px-4 rounded-lg transition-colors duration-300 text-center">
+                            VER CLASIFICACIONES
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    @@include('../../partials/footer.html')
+    @@include('../../partials/back-to-top.html')
+    @@include('../../partials/footer-scripts.html')
+
+</body>
+
+</html>
