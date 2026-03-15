@@ -376,10 +376,16 @@
                 <div class="border-b border-gray-200 mb-4 md:mb-6 overflow-x-auto tab-nav-wrapper">
                     <nav class="flex space-x-4 md:space-x-8 px-4" role="tablist">
                         <button class="tab-button py-3 md:py-4 px-4 md:px-1 border-b-2 font-medium text-sm md:text-sm whitespace-nowrap transition-colors duration-200 border-orange-500 text-orange-600" 
-                                data-tab="5K"
+                                data-tab="42K"
                                 role="tab"
                                 aria-selected="true">
-                            5K
+                            42K
+                        </button>
+                        <button class="tab-button py-3 md:py-4 px-4 md:px-1 border-b-2 font-medium text-sm md:text-sm whitespace-nowrap transition-colors duration-200 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" 
+                                data-tab="21K"
+                                role="tab"
+                                aria-selected="false">
+                            21K
                         </button>
                         <button class="tab-button py-3 md:py-4 px-4 md:px-1 border-b-2 font-medium text-sm md:text-sm whitespace-nowrap transition-colors duration-200 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" 
                                 data-tab="10K"
@@ -387,34 +393,33 @@
                                 aria-selected="false">
                             10K
                         </button>
-                        <button class="tab-button tab-disabled py-3 md:py-4 px-4 md:px-1 border-b-2 font-medium text-sm md:text-sm whitespace-nowrap transition-colors duration-200 border-transparent text-gray-400" 
-                                data-tab="21K"
+                        <button class="tab-button py-3 md:py-4 px-4 md:px-1 border-b-2 font-medium text-sm md:text-sm whitespace-nowrap transition-colors duration-200 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" 
+                                data-tab="5K"
                                 role="tab"
-                                aria-selected="false"
-                                disabled>
-                            <span class="hidden md:inline">21K - Domingo 15</span>
-                            <span class="md:hidden">21K</span>
-                        </button>
-                        <button class="tab-button tab-disabled py-3 md:py-4 px-4 md:px-1 border-b-2 font-medium text-sm md:text-sm whitespace-nowrap transition-colors duration-200 border-transparent text-gray-400" 
-                                data-tab="42K"
-                                role="tab"
-                                aria-selected="false"
-                                disabled>
-                            <span class="hidden md:inline">42K - Domingo 15</span>
-                            <span class="md:hidden">42K</span>
+                                aria-selected="false">
+                            5K
                         </button>
                     </nav>
                 </div>
             </div>
 
                 <div class="tab-content px-4">
-                    <!-- Tab 5K -->
-                    <div id="tab-content-5K" class="tab-panel" role="tabpanel">
+                    <!-- Tab 42K -->
+                    <div id="tab-content-42K" class="tab-panel" role="tabpanel">
                         <div class="preloader-container">
                             <div class="spinner"></div>
                             <p class="preloader-text">Cargando resultados...</p>
                         </div>
-                        <div id="ranking-container-69b3ff9b-6c1c-47b1-80e2-4d94ac1f0595-5K"></div>
+                        <div id="ranking-container-69b3ff9b-6c1c-47b1-80e2-4d94ac1f0595-42K"></div>
+                    </div>
+
+                    <!-- Tab 21K -->
+                    <div id="tab-content-21K" class="tab-panel hidden" role="tabpanel">
+                        <div class="preloader-container">
+                            <div class="spinner"></div>
+                            <p class="preloader-text">Cargando resultados...</p>
+                        </div>
+                        <div id="ranking-container-69b3ff9b-6c1c-47b1-80e2-4d94ac1f0595-21K"></div>
                     </div>
 
                     <!-- Tab 10K -->
@@ -426,22 +431,13 @@
                         <div id="ranking-container-69b3ff9b-6c1c-47b1-80e2-4d94ac1f0595-10K"></div>
                     </div>
 
-                    <!-- Tab 21K (deshabilitado) -->
-                    <div id="tab-content-21K" class="tab-panel hidden" role="tabpanel">
-                        <div class="upcoming-message">
-                            <i class="fas fa-clock"></i>
-                            <h3>Disponible domingo 15 de marzo</h3>
-                            <p>Los resultados de la 21K estarán disponibles durante la carrera del domingo.</p>
+                    <!-- Tab 5K -->
+                    <div id="tab-content-5K" class="tab-panel hidden" role="tabpanel">
+                        <div class="preloader-container">
+                            <div class="spinner"></div>
+                            <p class="preloader-text">Cargando resultados...</p>
                         </div>
-                    </div>
-
-                    <!-- Tab 42K (deshabilitado) -->
-                    <div id="tab-content-42K" class="tab-panel hidden" role="tabpanel">
-                        <div class="upcoming-message">
-                            <i class="fas fa-clock"></i>
-                            <h3>Disponible domingo 15 de marzo</h3>
-                            <p>Los resultados de la 42K estarán disponibles durante la carrera del domingo.</p>
-                        </div>
+                        <div id="ranking-container-69b3ff9b-6c1c-47b1-80e2-4d94ac1f0595-5K"></div>
                     </div>
                 </div>
             </div>
@@ -540,7 +536,7 @@
             var tabNav = tabNavWrapper.querySelector('nav');
             var liveHeader = document.getElementById('live-header');
             var lastScroll = 0;
-            var widgetsLoaded = { '5K': false, '10K': false };
+            var widgetsLoaded = { '5K': false, '10K': false, '21K': false, '42K': false };
             
             function handleHeaderScroll() {
                 if (window.innerWidth >= 768) return;
@@ -621,7 +617,7 @@
             checkScrollEnd();
             window.addEventListener('resize', checkScrollEnd);
             
-            loadRankingsWidget('5K');
+            loadRankingsWidget('42K');
             
             tabButtons.forEach(function(button) {
                 button.addEventListener('click', function() {
