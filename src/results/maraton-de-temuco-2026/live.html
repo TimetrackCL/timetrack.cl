@@ -456,32 +456,55 @@
             window.addEventListener('scroll', handleHeaderScroll);
             window.addEventListener('resize', handleHeaderScroll);
 
-            function loadRankingsWidget(tabId) {
-                if (widgetsLoaded[tabId]) return;
-                widgetsLoaded[tabId] = true;
+            var scriptLoaded = false;
+            var scriptLoading = false;
+            var pendingWidgets = [];
 
+            function initWidget(tabId) {
                 var containerId = 'ranking-container-69b3ff9b-6c1c-47b1-80e2-4d94ac1f0595-' + tabId;
                 var container = document.getElementById(containerId);
                 if (!container) return;
 
-                var script = document.createElement('script');
-                script.type = 'text/javascript';
-                script.src = 'https://development.timingsense.cloud/ts-rankings/main.js';
-                script.onload = function() {
-                    window.tsRankings.plugin({
-                        config: { env: "prod" },
-                        container: container,
-                        competitionId: "69b3ff9b-6c1c-47b1-80e2-4d94ac1f0595",
-                        event: decodeURI(tabId),
-                        slug: "maraton-de-temuco-2026",
-                        tableOptions: {
-                            density: "compact",
-                            pagination: { pageSize: 50, pageIndex: 0 }
-                        }
-                    });
-                    hidePreloaderWhenLoaded(tabId);
-                };
-                document.body.appendChild(script);
+                window.tsRankings.plugin({
+                    config: { env: "prod" },
+                    container: container,
+                    competitionId: "69b3ff9b-6c1c-47b1-80e2-4d94ac1f0595",
+                    event: decodeURI(tabId),
+                    slug: "maraton-de-temuco-2026",
+                    tableOptions: {
+                        density: "compact",
+                        pagination: { pageSize: 50, pageIndex: 0 }
+                    }
+                });
+                hidePreloaderWhenLoaded(tabId);
+            }
+
+            function loadRankingsWidget(tabId) {
+                if (widgetsLoaded[tabId]) return;
+                widgetsLoaded[tabId] = true;
+
+                if (scriptLoaded && window.tsRankings) {
+                    initWidget(tabId);
+                    return;
+                }
+
+                pendingWidgets.push(tabId);
+
+                if (!scriptLoading) {
+                    scriptLoading = true;
+                    var script = document.createElement('script');
+                    script.type = 'text/javascript';
+                    script.src = 'https://development.timingsense.cloud/ts-rankings/main.js';
+                    script.onload = function() {
+                        scriptLoaded = true;
+                        var toInit = pendingWidgets.slice();
+                        pendingWidgets = [];
+                        toInit.forEach(function(id) {
+                            initWidget(id);
+                        });
+                    };
+                    document.body.appendChild(script);
+                }
             }
 
             function hidePreloaderWhenLoaded(tabId) {
