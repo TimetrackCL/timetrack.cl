@@ -4,12 +4,12 @@
 <head>
     <meta charset="utf-8" />
 
-    <title>Resultados Maratón de Temuco 2026 | Timetrack</title>
+    <title>Resultados 21K - Maratón de Temuco 2026 | Timetrack</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Resultados oficiales de la Maratón de Temuco 2026. Consulta posiciones, tiempos y clasificaciones.">
-    <link rel="canonical" href="https://timetrack.cl/results/maraton-de-temuco-2026" />
+    <meta name="description" content="Resultados oficiales 21K de la Maratón de Temuco 2026. Consulta posiciones, tiempos y clasificaciones.">
+    <link rel="canonical" href="https://timetrack.cl/results/maraton-de-temuco-2026/21k" />
 
     <!-- Theme favicon -->
     <link rel="shortcut icon" href="/assets/images/favicon.ico">
@@ -29,6 +29,25 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0, s-maxage=0">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
+    
+    <link rel="preload" href="https://development.timingsense.cloud/ts-rankings/main.js" as="script">
+    
+    <style>
+        :root {
+            --primary-color: #1D67FF;
+            --split-selected-color: var(--primary-color);
+            --light-background: #f3f3f3;
+            --dark-background: #888;
+            --web-background: #fff;
+            --font-size: 12px;
+            --icon-size: 30px;
+            --navigation-padding: 20px;
+            --detail-item-font-size: 20px;
+            --detail-item-title-font-size: 16px;
+            --detail-subtitle-font-size: 14px;
+            --detail-table-font-size: 14px;
+        }
+    </style>
 </head>
 
 <body class="text-gray-700">
@@ -131,7 +150,8 @@
                 <div class="flex flex-wrap items-center gap-2 bg-gray-100 py-2 px-3">
                     <a href="/" class="transition-all hover:text-primary">Home</a> /
                     <a href="/results/" class="transition-all hover:text-primary">Resultados</a> /
-                    <p class="text-gray-500">Maratón de Temuco 2026</p>
+                    <a href="/results/maraton-de-temuco-2026/" class="transition-all hover:text-primary">Maratón de Temuco 2026</a> /
+                    <p class="text-gray-500">21K</p>
                 </div>
             </div>
         </div>
@@ -141,89 +161,27 @@
     <section class="pb-20">
         <div class="container">
             
-            <!-- Sección de Clasificaciones -->
+            <!-- Encabezado -->
             <div class="py-8">
-                <!-- Título -->
-                <div class="mb-8">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-2">Clasificaciones</h2>
-                    <p class="text-gray-600">Selecciona la distancia para ver los resultados</p>
+                <div class="flex items-center justify-between mb-6">
+                    <div>
+                        <h1 class="text-4xl font-bold text-gray-800 mb-2">Resultados 21K</h1>
+                        <p class="text-gray-600">Maratón de Temuco 2026</p>
+                    </div>
+                    <a href="/results/maraton-de-temuco-2026/" class="px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold rounded-lg transition-colors duration-300">
+                        ← Volver a clasificaciones
+                    </a>
                 </div>
+            </div>
 
-                <!-- Grid de Cards de Clasificaciones -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    
-                    <!-- Card 5K -->
-                    <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 p-6">
-                        <div class="mb-4">
-                            <h3 class="text-2xl font-bold text-gray-800 mb-3">5K</h3>
-                            <div class="space-y-2 text-gray-600">
-                                <div class="flex items-center gap-2">
-                                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                                    </svg>
-                                    <span class="text-sm">Sábado 14 de Marzo</span>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="5k.html" class="block w-full bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-semibold py-3 px-4 rounded-lg transition-colors duration-300 text-center">
-                            VER CLASIFICACIONES
-                        </a>
+            <!-- Contenedor de Resultados TimingSense -->
+            <div id="ranking-container-69b3ff9b-6c1c-47b1-80e2-4d94ac1f0595-21K">
+                <div id="results-loader" class="flex flex-col items-center justify-center py-20">
+                    <div class="relative">
+                        <div class="w-20 h-20 border-4 border-gray-200 border-t-primary rounded-full animate-spin"></div>
                     </div>
-
-                    <!-- Card 10K -->
-                    <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 p-6">
-                        <div class="mb-4">
-                            <h3 class="text-2xl font-bold text-gray-800 mb-3">10K</h3>
-                            <div class="space-y-2 text-gray-600">
-                                <div class="flex items-center gap-2">
-                                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                                    </svg>
-                                    <span class="text-sm">Sábado 14 de Marzo</span>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="10k.html" class="block w-full bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-semibold py-3 px-4 rounded-lg transition-colors duration-300 text-center">
-                            VER CLASIFICACIONES
-                        </a>
-                    </div>
-
-                    <!-- Card 21K -->
-                    <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 p-6">
-                        <div class="mb-4">
-                            <h3 class="text-2xl font-bold text-gray-800 mb-3">21K</h3>
-                            <div class="space-y-2 text-gray-600">
-                                <div class="flex items-center gap-2">
-                                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                    </svg>
-                                    <span class="text-sm">Domingo 15 de Marzo</span>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="21k.html" class="block w-full bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-semibold py-3 px-4 rounded-lg transition-colors duration-300 text-center">
-                            VER CLASIFICACIONES
-                        </a>
-                    </div>
-
-                    <!-- Card 42K -->
-                    <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 p-6">
-                        <div class="mb-4">
-                            <h3 class="text-2xl font-bold text-gray-800 mb-3">42K</h3>
-                            <div class="space-y-2 text-gray-600">
-                                <div class="flex items-center gap-2">
-                                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                    </svg>
-                                    <span class="text-sm">Domingo 15 de Marzo</span>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="42k.html" class="block w-full bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-semibold py-3 px-4 rounded-lg transition-colors duration-300 text-center">
-                            VER CLASIFICACIONES
-                        </a>
-                    </div>
-
+                    <p class="mt-6 text-lg text-gray-600 font-medium">Cargando resultados...</p>
+                    <p class="mt-2 text-sm text-gray-500">Por favor espera un momento</p>
                 </div>
             </div>
             
@@ -313,6 +271,47 @@
 
     <!-- chatbots -->
     <!-- <script src="https://aurora.safeware.cl/integration/15af0a50-e884-445a-976c-1344c0d09470/aurora-chat-plugin.js"></script> -->
+    
+    <script type="text/javascript" 
+            onload='window.tsRankings.plugin({
+                config: { env: "prod" },
+                container: document.getElementById("ranking-container-69b3ff9b-6c1c-47b1-80e2-4d94ac1f0595-21K"),
+                slug: "maraton-de-temuco-2026",
+                competitionId: "69b3ff9b-6c1c-47b1-80e2-4d94ac1f0595",
+                event: decodeURI("21K")
+            });'
+            src="https://development.timingsense.cloud/ts-rankings/main.js">
+    </script>
+    
+    <script>
+        const container = document.getElementById('ranking-container-69b3ff9b-6c1c-47b1-80e2-4d94ac1f0595-21K');
+        const loader = document.getElementById('results-loader');
+        
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.addedNodes.length > 0) {
+                    const hasContent = Array.from(container.children).some(child => 
+                        child.id !== 'results-loader' && child.innerHTML.trim() !== ''
+                    );
+                    
+                    if (hasContent && loader) {
+                        loader.style.display = 'none';
+                    }
+                }
+            });
+        });
+        
+        observer.observe(container, { 
+            childList: true, 
+            subtree: true 
+        });
+        
+        setTimeout(() => {
+            if (loader && loader.style.display !== 'none') {
+                loader.style.display = 'none';
+            }
+        }, 10000);
+    </script>
 
 </body>
 
